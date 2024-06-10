@@ -1,0 +1,102 @@
+{% extends 'blogue/layout.html' %}
+
+{% block content %}
+     <div class="header-image">
+         <div class="header-text">TechNews</div>
+        </div>
+        <nav class="header-bar">
+            <div class="contentorlogin">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}?next={{ request.path }}" class="button logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}?next={{ request.path }}" class="button"><i class="fas fa-sign-in-alt"></i> Login</a>
+                {% endif %}
+                <a href="{% url 'blogue:pagina_inicial' %}" class="button home-button">
+                <i class="fa-solid fa-house"></i> Início
+                </a>
+            </div>
+           <div class="contentorEdicao">
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.autor %}
+                            <a href="{% url 'blogue:pagina_autor_sem_artigo' request.user.autor.id %}" class="button">
+                            <i class="fas fa-user"></i>Meu Perfil
+                            </a>
+                        {% else %}
+                            <a href="{% url 'blogue:cria_autor' %}" class="button">
+                            <i class="fas fa-user"></i>Criar Perfil
+                            </a>
+                        {% endif %}
+                    {% endif %}
+
+                    {% if request.user.is_authenticated %}
+                    <span class="username">
+                    <a><i class="fas fa-user"></i>
+                    {{ request.user.username }}
+                    </a>
+                </span>
+            {% endif %}
+        </div>
+        </nav>
+        <div class="conteinerTitulo">
+            <div class="tituloPaginaArtigo">
+                <h1>{{ artigo.titulo }}</h1>
+            </div>
+        </div>
+         <div class="caixaprincipal">
+            <div class="textoprincipal">
+                <div class="imagemProjeto-conteiner">
+                <p><img src="{{ artigo.imagem.url }}" class="projeto-imageprojeto"></p>
+                </div>
+                <strong class="titulo-seccao">{{ artigo.titulo }}</strong>
+                <div class="textoApresentacao">
+                    <p><Strong>Data de Publicação:</Strong> {{ artigo.data_publicacao }}<p>
+                </div>
+                <div class="textoApresentacao">
+                    <p>{{ artigo.conteudo }}<p>
+                </div>
+            </div>
+        </div>
+            <div class="caixas-lado-a-lado">
+         <div class="caixasecundaria">
+            <div class="textoprincipal">
+                <strong class="titulo-seccao">Autor:</strong>
+                    <div class="autor-info">
+                    <div class="autor-imagem">
+                        <img src="{{ autor.imagem.url }}" alt="Imagem do Autor">
+                    </div>
+                    <div class="autor-nome">
+                        <a href="{% url 'blogue:pagina_autor' autor.id artigo.id %}">{{ autor.user.first_name }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="caixasecundaria">
+             <div class="textoprincipal">
+                 <div class="textoApresentacao">
+                     <p><Strong>Média de Classificações:</Strong> {{ media_classificacoes }}</p>
+                 </div>
+                 <div class="textoApresentacao">
+                     <p><Strong>Quantidade de Comentários:</Strong> {{ num_comentarios }}</p>
+                 </div>
+                 <div class="textoApresentacao">
+                     <a href="{% url 'blogue:pagina_comentarios' artigo.id %}">Ver Comentários</a>
+                 </div>
+             </div>
+         </div>
+     </div>
+        <div class="conteinerTitulo">
+            <div class="conteinerbotoes">
+                {% if request.user.is_authenticated and userIsEditor  %}
+                    <a href="{% url 'blogue:edita_artigo' artigo.id %}"class="buttonEdicao">
+                        <i class="fas fa-edit"></i>Editar Artigo
+                        </a>
+                {% endif %}
+
+                {% if request.user.is_authenticated and userIsEditor  %}
+                    <a href="{% url 'blogue:apaga_artigo' artigo.id %}"class="buttonEdicao">
+                        <i class="fas fa-trash-alt"></i>Apagar Artigo
+                        </a>
+                {% endif %}
+            </div>
+        </div>
+{% endblock %}

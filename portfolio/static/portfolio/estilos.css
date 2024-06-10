@@ -1,0 +1,824 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Radio Canada Big', sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: transparent;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 1em;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    color: #1AA933; /* Cor verde quando passar o mouse */
+}
+
+.hero {
+    height: 100vh;
+    background-image: url('/static/portfolio/FundoPortef.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conteúdo ao início verticalmente */
+    align-items: flex-start; /* Alinha o conteúdo ao início horizontalmente */
+    padding: 25vh 11vw; /* Adiciona espaçamento superior e à esquerda */
+    position: relative;
+}
+
+.text-container {
+    color: white;
+}
+
+.text-container h1 {
+    font-size: 3em; /* Aumenta o tamanho da fonte */
+    margin-bottom: 0.4em;
+    color: #B2C3B5;
+}
+
+.text-container h2 {
+    font-size: 7em; /* Aumenta o tamanho da fonte */
+    margin-bottom: 0.1em;
+}
+
+.text-container h3 {
+    font-size: 2.5em; /* Aumenta o tamanho da fonte */
+    margin-bottom: 0.5em;
+}
+
+.social-icons {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em; /* Espaçamento entre ícones */
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5em; /* Reduz o tamanho dos ícones */
+    margin: 0.25em 0; /* Ajusta o espaçamento vertical */
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #1AA933; /* Muda para uma cor desejada no hover */
+}
+
+.username {
+    color:white;
+}
+
+.username i {
+    margin-right: 5px;
+}
+
+/* Estilos para a seção de projetos */
+.projects {
+    height: 160vh;
+    background-image: url('/static/portfolio/fotoFundo.png'); /* Imagem de fundo diferente */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 20vh 10vw;
+    display: flex;
+    flex-direction: column; /* Alinha o header e os projetos verticalmente */
+    align-items: center;
+    gap: 2em; /* Espaçamento entre o header e os projetos */
+}
+
+.projects-header {
+    text-align: center;
+    color: white;
+}
+
+.projects-header h1 {
+    font-size: 3em; /* Tamanho maior para o título */
+    margin-bottom: 0.5em;
+}
+
+.projects-header h2 {
+    font-size: 2em; /* Tamanho menor para o subtítulo */
+    margin-bottom: 1em;
+}
+
+.projects-container {
+    display: flex; /* Alinha os projetos horizontalmente */
+    justify-content: space-between;
+}
+
+.project {
+    background: black;
+    border: 2px solid #1AA933;
+    width: 30%;
+    height: 100%; /* Ajustar a altura para ocupar toda a altura da seção */
+    padding: 2em;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* Adicionar overflow para evitar que o texto saia das caixas */
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.project h3 {
+    font-size: 1.5em; /* Tamanho do título */
+    margin-bottom: 0.5em; /* Espaçamento inferior */
+    text-decoration: none;
+    color:#1AA933;
+}
+
+.project p {
+    font-size: 1em; /* Tamanho do texto explicativo */
+    color: white; /* Cor do texto */
+    text-decoration: none;
+}
+
+.project a {
+    text-decoration: none; /* Remove a decoração de texto dos links dentro das caixas .project */
+}
+
+
+
+.contact-section {
+    height: 100vh;
+    background-image: url('/static/portfolio/fundo5.jpg'); /* Utiliza a mesma imagem de fundo */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+    text-align: center;
+    color: white;
+}
+
+.contact-header h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    color:#1AA933;
+}
+
+.contact-header h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 0 1em;
+    margin-top: 10px;
+}
+
+.contact-item i {
+    margin-right: 0.5em;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; /* Aumenta a margem superior */
+}
+
+.contact-icons a {
+    font-size: 4em; /* Aumenta o tamanho dos ícones */
+    margin: 0 15px; /* Adiciona margem horizontal */
+    color:white;
+}
+
+.contact-icons a:hover {
+    color: #1AA933;
+}
+
+.weather-section {
+    background-image: url('/static/portfolio/fotoFundoParte3.png'); /* Use a mesma imagem de fundo */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 10vh 10vw; /* Ajustar o padding conforme necessário */
+    display: flex;
+    justify-content: center; /* Alinhar o conteúdo ao centro horizontalmente */
+    align-items: center; /* Alinhar o conteúdo ao centro verticalmente */
+    width: 100%; /* Definir largura total */
+    height: 100vh; /* Definir altura igual à altura da janela de visualização */
+    text-decoration: none;
+}
+
+.weather-container {
+    width: 80%; /* Definir uma largura de 80% da página */
+    background-color: black; /* Fundo branco */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Borda arredondada */
+    border: 2px solid #1AA933;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    justify-content: space-between; /* Espaçar conteúdo à esquerda e à direita */
+    align-items: center; /* Alinhar itens ao centro verticalmente */
+    color: #020202; /* Cor do texto */
+    text-decoration: none;
+}
+
+.weather-container:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+    color: #020202;
+}
+
+.weather-info {
+    display: flex;
+    width: 100%; /* Ocupa toda a largura disponível */
+    text-decoration: none;
+    color: #020202;
+}
+
+.weather-details-container {
+    width: 50%; /* Ocupa metade da largura */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 10px; /* Espaçamento interno */
+    background-color: white; /* Cor de fundo diferente para a moldura */
+    border-radius: 10px; /* Borda arredondada */
+    text-decoration: none;
+    color: #020202;
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    width: 100%; /* Ocupa toda a largura do container interno */
+    padding: 10px; /* Espaçamento interno */
+    background-color: white; /* Fundo branco para o container interno */
+    border-radius: 10px; /* Borda arredondada */
+    text-decoration: none;
+}
+
+.weather-icon {
+    width: 120px; /* Definir o tamanho do ícone do tempo */
+    text-decoration: none;
+}
+
+.city-name {
+    font-size: 1em; /* Tamanho do texto da cidade */
+    margin-top: 10px; /* Margem superior */
+    text-decoration: none;
+}
+
+.weather-details p {
+    margin: 5px 0; /* Espaçamento entre os parágrafos */
+    text-decoration: none;
+}
+
+.weather-description {
+    width: 50%; /* Ocupa metade da largura */
+    margin-left: 20px; /* Espaçamento à esquerda para separar da caixa do ícone */
+    text-decoration: none;
+}
+
+.weather-description h2 {
+    font-size: 1.5em; /* Tamanho do título */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    color: #1AA933 ;
+    text-decoration: none;
+}
+
+.weather-description p {
+    font-size: 1em; /* Tamanho do texto */
+    line-height: 1.5; /* Altura da linha para melhor legibilidade */
+    color: white ;
+    text-decoration: none;
+}
+
+
+.weather-container, .weather-container * {
+    text-decoration: none; /* Remove decoração de texto de todos os elementos dentro da weather-container */
+}
+
+
+
+footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    border:;
+    border: 3px solid #1AA933;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px; /* Ajuste a largura máxima conforme necessário */
+    margin: 0 auto; /* Centralizar o conteúdo horizontalmente */
+}
+
+#clock {
+    font-size: 1.2em; /* Ajuste o tamanho do texto conforme necessário */
+    color: white;
+}
+
+
+#darkModeToggle {
+    background-color: transparent;
+    color: #1AA933;
+    border: 2px solid #1AA933;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+#darkModeToggle:hover {
+    color: white;
+    border-color: white;
+}
+
+#darkModeToggle i {
+    margin-right: 5px;
+}
+
+
+
+.hero.dark-mode {
+    background-image: url('/static/portfolio/FundoProjBW.jpg');
+}
+
+.projects.dark-mode {
+    background-image: url('/static/portfolio/FotoFundo2BW.jpg');
+}
+
+.weather-section.dark-mode {
+    background-image: url('/static/portfolio/FotoFundoParte4.jpg');
+}
+
+.project.dark-mode {
+    border: 2px solid #4D4C45;
+
+}
+
+.project h3.dark-mode {
+    color:#4D4C45;
+}
+
+.weather-description h2.dark-mode {
+    color: #4D4C45 ;
+
+}
+
+.weather-container.dark-mode {
+    border: 2px solid #4D4C45;
+
+}
+
+footer.dark-mode {
+    border: 3px solid #4D4C45;
+}
+
+
+#darkModeToggle.dark-mode {
+    color: white;
+    border: 2px solid white;
+}
+
+#darkModeToggle:hover.dark-mode {
+    color: #1AA933;
+    border-color: #1AA933;
+}
+
+
+
+
+
+
+.containerSobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para a caixa principal */
+.caixaSobre {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 70%;
+    max-width: 1000px;
+}
+
+/* Estilos para a caixa-foto */
+.caixa-foto {
+    text-align: center;
+    margin-right: 20px;
+    border-radius: 10px;
+    background-color: black;
+    border-color: black;
+}
+
+/* Novo contêiner dentro da caixa-foto */
+.contentor {
+    padding: 20px; /* Adicionei padding para criar espaço interno */
+    text-align: center; /* Centralizei o texto */
+}
+
+/* Estilos para a foto */
+.fotoSobre {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    display: block; /* Para centralizar dentro do padding */
+    margin-left: auto; /* Para centralizar dentro do padding */
+    margin-right: auto; /* Para centralizar dentro do padding */
+}
+
+/* Estilos para os textos dentro da caixa-foto */
+.contentor h1 {
+    font-size: 16px;
+    margin: 10px 0; /* Margens verticais para espaçamento */
+    color: white; /* Cor do texto */
+}
+
+.contentor h2 {
+    font-size: 13px;
+    margin: 10px 0; /* Margens verticais para espaçamento */
+    color: white;
+
+}
+
+/* Estilos para a caixa-sobre */
+.caixa-sobre {
+    max-width: 600px;
+    padding: 20px; /* Padding para espaço interno */
+    margin-left: 20px; /* Margem para separação da caixa-foto */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com opacidade */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilos para o título na caixa-sobre */
+.caixa-sobre h1 {
+    margin-bottom: 10px;
+    color:#1AA933;
+}
+
+/* Estilos para o parágrafo na caixa-sobre */
+.caixa-sobre p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    text-align: justify; /* Texto justificado */
+}
+
+
+.containerSobre, .containerExperiencia, .containerFormacao, .containerAtividades, .containerSkills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px; /* Espaço entre as seções */
+}
+
+/* Estilos para caixas */
+.caixaSobre, .caixaExperiencia, .caixaFormacao, .caixaAtividades, .caixaSkills {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 70%;
+    max-width: 1000px;
+    margin-bottom: 40px; /* Espaço inferior para cada caixa */
+}
+
+/* Estilos para títulos */
+
+
+.skill-box {
+    border: 2px solid #1AA933; /* Cor da borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 15px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Margem inferior */
+}
+
+/* Estilos para títulos dentro das caixas de habilidades */
+.skill-box h2 {
+    color: #1AA933;
+    margin-bottom: 10px; /* Margem inferior */
+}
+
+/* Estilos para parágrafos dentro das caixas de habilidades */
+.skill-box p {
+    margin: 0; /* Remover margem padrão */
+}
+
+.lingua-box {
+    border: 2px solid #1AA933; /* Cor da borda */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 15px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Margem inferior */
+}
+
+/* Estilos para títulos dentro das caixas de habilidades linguísticas */
+.lingua-box h2 {
+    color: #1AA933;
+    margin-bottom: 10px; /* Margem inferior */
+}
+
+/* Estilos para parágrafos dentro das caixas de habilidades linguísticas */
+.lingua-box p {
+    margin: 0; /* Remover margem padrão */
+}
+
+
+.pagina-sobre {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o contêiner ocupe toda a altura da janela */
+    background-image: url('/static/portfolio/fotoFundoSobre1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pagina-conteudo {
+    flex: 1; /* Faz com que este contêiner ocupe o espaço restante na página */
+    padding: 20px; /* Adicione padding para o conteúdo não encostar nas bordas */
+    overflow-y: auto; /* Adiciona scroll vertical quando o conteúdo excede a altura da janela */
+}
+
+.pagina-sobre h1 {
+    color: #1AA933;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pagina-sobre h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.item-experiencia h2{
+    color: black;
+    margin-bottom: 10px;
+}
+
+.item-formacao  h2{
+    color: black;
+    margin-bottom: 10px;
+}
+
+.item-atividade  h2{
+    color: black;
+    margin-bottom: 10px;
+}
+
+.skill-box  h2{
+    color: black;
+    margin-bottom: 10px;
+}
+
+.lingua-box  h2{
+    color: black;
+    margin-bottom: 10px;
+}
+
+.pagina-sobre .item-experiencia,
+.pagina-sobre .item-formacao,
+.pagina-sobre .item-atividade {
+    margin-bottom: 20px;
+}
+
+.pagina-sobre p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    text-align: justify;
+}
+
+
+
+#technologies {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Movido o margin-top para fora da definição anterior */
+    margin-left: 110px;
+    margin-right: 110px;
+}
+
+.technology {
+    margin-bottom: 40px; /* Aumentei o espaço entre cada tecnologia */
+}
+
+.technology h3 {
+    color: #1AA933;
+    margin-bottom: 10px; /* Adicionei uma margem inferior para separar o título dos conteúdos */
+}
+
+.technology h4 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 5px; /* Adicionei uma margem inferior para separar os subtítulos dos parágrafos */
+}
+
+.technology p {
+    font-size: 16px;
+    line-height: 1.6; /* Ajustei o espaçamento entre linhas para facilitar a leitura */
+}
+
+#technologies h2 {
+    color: #1AA933;
+}
+
+
+#videos {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#videos h2 {
+    color: #1AA933;
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.video-wrapper {
+    width: calc(50% - 20px); /* Reduzir o tamanho dos vídeos e adicionar espaço entre eles */
+    margin-bottom: 20px; /* Aumentar a margem inferior para criar mais espaço entre os vídeos */
+    border-left: 5px;  /* Adicionar uma borda à esquerda dos vídeos */
+    border-right: 5px; /* Adicionar uma borda à direita dos vídeos */
+    padding: 10px; /* Adicionar um preenchimento interno para separar o conteúdo da borda */
+}
+
+.video-wrapper iframe {
+    width: 100%; /* Garantir que os iframes dos vídeos ocupem todo o espaço dentro dos contêineres */
+    height: 300px; /* Ajustar a altura dos iframes */
+    border: none; /* Remover a borda dos iframes */
+    padding: 0; /* Remover o preenchimento dos iframes */
+}
+
+.video-wrapper h3 {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .video-wrapper {
+        width: 100%;
+    }
+}
+
+.containerSobreProg {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 110px;
+    margin-right: 110px;
+}
+
+.caixaSobreProg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.caixa-sobreProg {
+    max-width: 600px;
+}
+
+.pagina-conteudoProg {
+    flex: 1; /* Faz com que este contêiner ocupe o espaço restante na página */
+    padding: 50px; /* Adicione padding para o conteúdo não encostar nas bordas */
+    overflow-y: auto; /* Adiciona scroll vertical quando o conteúdo excede a altura da janela */
+}
+
+
+.caixa-sobreProg h1 {
+    font-size: 24px;
+    color:#1AA933 ;
+    margin-bottom: 20px;
+}
+
+.caixa-sobreProg p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.caixa-sobreProg ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #666;
+}
+
+.caixa-sobreProg ul li {
+    margin-bottom: 10px;
+}
+
+.caixa-sobreProg ul li strong {
+    color: #000;
+}
+
+
+
+body.pagina-sobre nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 1em;
+    margin-right: 60px;
+}
+
+body.pagina-sobre nav ul li {
+    margin: 0 1em;
+}
+
+body.pagina-sobre nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+body.pagina-sobre nav ul li a:hover {
+    color: #1AA933; /* Cor verde quando passar o mouse */
+}

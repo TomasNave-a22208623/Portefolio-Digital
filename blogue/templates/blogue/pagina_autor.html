@@ -1,0 +1,86 @@
+{% extends 'blogue/layout.html' %}
+
+{% block content %}
+    <div class="header-image">
+         <div class="header-text">TechNews</div>
+        </div>
+        <nav class="header-bar">
+            <div class="contentorlogin">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}?next={{ request.path }}" class="button logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}?next={{ request.path }}" class="button"><i class="fas fa-sign-in-alt"></i> Login</a>
+                {% endif %}
+                <a href="{% url 'blogue:pagina_inicial' %}" class="button home-button">
+                <i class="fa-solid fa-house"></i> Início
+                </a>
+                {% if artigos %}
+                    <a href="{% url 'blogue:pagina_artigo' artigos.first.id %}" class="button home-button">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                    </a>
+                {% endif %}
+
+            </div>
+            <div class="contentorEdicao">
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.autor %}
+                            <a href="{% url 'blogue:pagina_autor_sem_artigo' request.user.autor.id %}" class="button">
+                            <i class="fas fa-user"></i>Meu Perfil
+                            </a>
+                        {% else %}
+                            <a href="{% url 'blogue:cria_autor' %}" class="button">
+                            <i class="fas fa-user"></i>Criar Perfil
+                            </a>
+                        {% endif %}
+                    {% endif %}
+
+                    {% if request.user.is_authenticated %}
+                    <span class="username">
+                    <a><i class="fas fa-user"></i>
+                    {{ request.user.username }}
+                    </a>
+                </span>
+            {% endif %}
+        </div>
+        </nav>
+        <div class="conteinerTitulo">
+            <div class="tituloPaginaArtigo">
+                <h1>Perfil</h1>
+            </div>
+        </div>
+        <div class="caixaprincipal">
+            <div class="textoprincipal">
+                <div class="autor-info">
+                    <div class="autor-imagem">
+                        <img src="{{ autor.imagem.url }}" alt="Imagem do Autor">
+                    </div>
+                    <div class="textoApresentacao">
+                        <p><strong>Username:</strong> {{ autor.user.first_name }}<p>
+                        <p><strong>Nome:</strong> {{ autor.nome }}</p>
+                        <p><strong>Email:</strong> {{ autor.email }}</p>
+                        <p><strong>Biografia:</strong> {{ autor.biografia }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="conteinerTitulo">
+                    <div class="conteinerbotoes">
+                        {% if artigo %}
+                        {% if request.user.is_authenticated and userIsEditor or request.user.is_superuser or request.user.first_name == autor.user.first_name %}
+                            <a href="{% url 'blogue:edita_autor' autor.id artigo.id %}"class="buttonEdicao">
+                                <i class="fas fa-edit"></i>Editar Perfil
+                            </a>
+                        {% endif %}
+                        {% else %}
+                        {% if request.user.is_authenticated and userIsEditor or request.user.is_superuser or request.user.first_name == autor.user.first_name %}
+                            <a href="{% url 'blogue:edita_autor_sem_artigo' autor.id  %}"class="buttonEdicao">
+                                <i class="fas fa-edit"></i>Editar Perfil
+                            </a>
+                        {% endif %}
+
+                        {% endif %}
+
+                    </div>
+                </div>
+
+{% endblock %}

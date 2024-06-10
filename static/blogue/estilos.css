@@ -1,0 +1,429 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Changa', sans-serif;
+    margin: 0; /* Remove margem padrão */
+    padding: 0; /* Remove padding padrão */
+}
+
+footer p {
+    color: #888;
+    font-size: 12px;
+    text-align: center;
+    margin: 0; /* Remove margem padrão */
+    padding: 10px; /* Adiciona padding para espaçamento interno */
+}
+
+
+
+.header-image {
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    background-image: url('/static/blogue/cabecalhoBlogue2.png'); /* Caminho para sua imagem de rock */
+    background-size: cover; /* Ajusta a imagem para cobrir o contêiner */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-position: center; /* Centraliza a imagem no elemento */
+    width: 100%; /* Largura total do contêiner */
+    height: 175px; /* Altura fixa para o cabeçalho */
+    margin: 0; /* Remove margem */
+    padding: 0; /* Remove padding */
+}
+
+
+.header-bar {
+    background-color: #20D221;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0; /* Remove qualquer margem */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total do elemento */
+    border: 3px solid black
+}
+
+.header-text {
+    color: white; /* Cor do texto */
+    font-size: 35px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    text-align: center; /* Centraliza o texto */
+    margin-right:300px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.contentorlogin{
+    padding: 15px;
+}
+
+
+
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+
+
+.button {
+    color: #1B971C;
+    background-color: black;
+    border: 2px solid #1B971C; /* Borda preta */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 6px 12px; /* Padding menor */
+    text-decoration: none;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+    font-size: 14px; /* Tamanho da fonte ajustado */
+    margin: 5px; /* Margem para espaçamento */
+    width: auto; /* Largura automática */
+    height: auto; /* Altura automática */
+}
+
+.button:hover {
+    color: #20D221;
+    border-color: white;
+
+}
+
+.edit-button {
+    background-color: #444
+}
+
+.delete-button {
+    background-color: #444
+}
+
+.add--button {
+    background-color: #3D80DB
+}
+
+.home-button {
+    background-color: black; /* Cor de fundo para o botão de voltar ao início */
+}
+
+.back-button {
+    background-color: #444; /* Cor de fundo para o botão de voltar ao início */
+}
+
+
+.button i {
+    margin-right: 5px;
+}
+
+.button.logout {
+
+}
+
+
+.username {
+    margin-right: 10px;
+    color:black;
+}
+
+.username i {
+    margin-right: 5px;
+}
+
+
+
+.conteinerTitulo{
+    margin-bottom:80px;
+    text-align: center;
+}
+
+
+.tituloPagina{
+    text-align: center;
+    color: #1B971C;
+    font-size: 30px;
+    margin-bottom:0px;
+}
+.subtituloPagina{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-top:1px;
+}
+
+
+
+
+.caixaprincipal {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+    background-color:white;
+    border: 1px solid #444;
+    border-radius: 10px;
+    margin-right:210px;
+    margin-left:210px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.conteinerpagina{
+    text-align: center;
+}
+
+
+.contentor-texto{
+    margin-top:40px;
+}
+
+/* texto caixa */
+
+.textoprincipal{
+    margin-top:50px;
+    margin-right:60px;
+    margin-left:60px;
+    margin-bottom:50px;
+}
+
+.titulo-seccao {
+    font-size: 24px;
+    color: #20D221;
+    margin-right: 10px; /* Espaço entre o título e o texto */
+    flex-shrink: 0; /* Evita que o título encolha */
+}
+
+.textoApresentacao {
+    font-size: 18px;
+    line-height: 24px; /* Define a altura da linha para alinhar verticalmente com o título */
+    flex-grow: 1; /* Permite que o texto cresça e ocupe o espaço restante */
+}
+
+
+.projeto-imageprojeto {
+    width: 700px; /* Define a largura fixa da imagem */
+    height: 340px; /* Define a altura fixa da imagem */
+    object-fit: cover; /* Garante que a imagem se ajuste dentro das dimensões sem distorção */
+    border-radius: 8px; /* Cantos arredondados */
+    border: 1px solid #151515; /* Borda fina e cor */
+    align-items: center;
+    margin-bottom:30px;
+}
+
+.imagemProjeto-conteiner {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.conteinerTitulo{
+    margin-bottom:10px;
+    text-align: center;
+}
+
+.conteinerbotoes{
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+.buttonEdicao {
+    color: black;
+    background-color: #20D221;
+    border: 2px solid #20D221; /* Borda preta */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 6px 12px; /* Padding menor */
+    text-decoration: none;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+    font-size: 14px; /* Tamanho da fonte ajustado */
+    margin: 5px; /* Margem para espaçamento */
+    width: auto; /* Largura automática */
+    height: auto; /* Altura automática */
+}
+
+.buttonEdicao:hover {
+    color: white;
+    border-color: white;
+
+}
+
+.tituloPaginaArtigo{
+    text-align: center;
+    color: #1B971C;
+    font-size: 15px;
+    margin-bottom:0px;
+}
+
+.caixas-lado-a-lado {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 210px;
+    margin-left: 210px;
+}
+
+
+.caixasecundaria {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+    background-color:white;
+    border: 1px solid #444;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 10px;
+}
+
+
+.autor-info {
+    display: flex;
+    align-items: center;
+}
+
+.autor-imagem {
+    margin-right: 15px; /* Espaço entre a imagem e o nome */
+}
+
+.autor-imagem img {
+    width: 100px; /* Largura da imagem */
+    height: 100px; /* Mantém a proporção da imagem */
+    border-radius: 50%; /* Torna a imagem circular */
+}
+
+.autor-nome a {
+    font-size: 25px;
+    color: #1B971C;
+    text-decoration: none;
+}
+
+.autor-nome a:hover {
+    text-decoration: underline;
+}
+
+
+.contentorEdicao{
+
+}
+
+.contentorEdicao .button {
+    margin: 0 10px; /* Adiciona margem horizontal entre os botões */
+}
+
+
+@media screen and (max-width: 600px) {
+
+    body {
+        font-size: 14px; /* Diminui o tamanho da fonte */
+    }
+
+    .header-image {
+        height: 120px; /* Reduz a altura do cabeçalho */
+    }
+
+    .header-bar {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        padding: 5px; /* Reduz o padding */
+    }
+
+    .contentorlogin {
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .header-text {
+        font-size: 25px; /* Diminui o tamanho do texto do cabeçalho */
+        margin-right: 100px; /* Reduz a margem direita */
+    }
+
+
+    .button {
+        font-size: 12px; /* Diminui o tamanho do texto dos botões */
+        padding: 4px 8px; /* Diminui o padding dos botões */
+        margin: 3px;
+    }
+
+    .caixaprincipal,
+    .caixasecundaria {
+        margin-right: 10px;
+        margin-left: 10px; /* Diminui a margem lateral */
+    }
+
+    .projeto-imageprojeto {
+    max-width: 100%; /* Define a largura máxima da imagem como 100% do contêiner */
+    height: auto; /* Permite que a altura seja ajustada automaticamente */
+    border-radius: 8px; /* Mantém o arredondamento da borda */
+    border: 1px solid #151515; /* Mantém a borda */
+    align-items: center; /* Não necessário para imagens */
+    margin-bottom: 30px; /* Mantém a margem inferior */
+}
+
+
+.imagemProjeto-conteiner {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 20px; /* Reduz a margem inferior */
+}
+    .tituloPagina {
+        font-size: 20px; /* Diminui o tamanho do título da página */
+    }
+
+    .subtituloPagina {
+        font-size: 16px; /* Diminui o tamanho do subtitulo */
+    }
+
+    .textoApresentacao {
+        font-size: 14px; /* Diminui o tamanho do texto de apresentação */
+    }
+
+    .titulo-seccao {
+        font-size: 20px; /* Diminui o tamanho do título das seções */
+    }
+
+    .autor-nome a {
+        font-size: 20px; /* Diminui o tamanho do nome do autor */
+    }
+
+ .caixas-lado-a-lado {
+        flex-direction: column; /* Altera a direção do layout para coluna */
+        margin-right: 10px;
+        margin-left: 10px; /* Adiciona margem lateral */
+    }
+
+    .caixasecundaria {
+        margin-top: 20px; /* Adiciona margem superior entre as caixas */
+        margin-bottom: 20px; /* Adiciona margem inferior entre as caixas */
+    }
+
+    .autor-imagem img {
+        width: 100px; /* Reduz a largura da imagem do autor */
+        height: 100px; /* Mantém a proporção */
+        border-radius: 50%; /* Torna a imagem circular */
+    }
+
+    .titulo-seccao {
+        font-size: 20px; /* Diminui o tamanho do título */
+    }
+
+    .textoApresentacao {
+        font-size: 14px; /* Diminui o tamanho do texto de apresentação */
+    }
+
+    contentorEdicao a.button {
+        display: block;
+        margin-bottom: 10px; /* Adicione um espaçamento vertical entre os botões */
+    }
+
+    .contentorEdicao {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contentorEdicao a.button {
+        margin-bottom: 10px; /* Adicione margem inferior para espaçamento entre os botões */
+    }
+
+    .header-image {
+        height: 100px; /* Ajuste a altura conforme necessário */
+        background-size: cover; /* Ajusta a imagem para cobrir todo o contêiner */
+        background-position: center; /* Centraliza a imagem */
+        margin: 0; /* Remove margens */
+        padding: 0; /* Remove padding */
+    }
+
+
+}

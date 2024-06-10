@@ -1,0 +1,100 @@
+{% extends 'bandas/layout.html' %}
+{% load static %}
+
+{% block title %}HTML5 e CSS{% endblock %}
+
+{% block content %}
+<div class="header-image">
+    <div class="header-text">Rock Lusófona</div>
+</div>
+<nav class="header-bar">
+    <div class="contentorlogin">
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'logout' %}?next={{ request.path }}" class="button logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}?next={{ request.path }}" class="button"><i class="fas fa-sign-in-alt"></i> Login</a>
+        {% endif %}
+        <a href="{% url 'index' %}" class="button home-button">
+            <i class="fa-solid fa-house"></i> Início
+        </a>
+    </div>
+    <div class="contentorEdicao">
+        {% if request.user.is_authenticated %}
+            <span class="username">
+                <i class="fas fa-user"></i>
+                {{ request.user.username }}
+            </span>
+        {% endif %}
+    </div>
+</nav>
+<body>
+    <div class="css-container">
+        <h1 class="css-title">Tipos de Seletores CSS e Combinadores</h1>
+
+        <!-- Caixa grande para Tipos de Seletores -->
+        <div class="css-caixa-grande">
+            <h2 class="css-subtitle">Tipos de Seletores</h2>
+            <div class="css-caixa-pequena">
+                <h3 class="css-seletor-titulo">Seletor: Universal (*)</h3>
+                <p class="css-usado"><span class="css-usado-texto">Usado:</span> Sim</p>
+                <p class="css-comentario">Comentário: Seleciona todos os elementos. Utilizado para aplicar uma fonte a todos os elementos.</p>
+            </div>
+            <div class="css-caixa-pequena">
+                <h3 class="css-seletor-titulo">Seletor: Tipo (elemento)</h3>
+                <p class="css-usado"><span class="css-usado-texto">Usado:</span> Sim</p>
+                <p class="css-comentario">Comentário: Seleciona todos os elementos de um determinado tipo. Utilizado para estilizar todos os <code>&lt;p&gt;</code> numa página específica. Utilizei nas páginas das Bandas, dos Blogues e do Curso.</p>
+            </div>
+            <div class="css-caixa-pequena">
+                <h3 class="css-seletor-titulo">Seletor: Classe (.classe)</h3>
+                <p class="css-usado"><span class="css-usado-texto">Usado:</span> Sim</p>
+                <p class="css-comentario">Comentário: Seleciona todos os elementos de uma determinada classe. Utilizado para aplicar estilos a vários elementos com classes específicas como <code>.header-image</code>, <code>.button</code>, entre outros.</p>
+            </div>
+            <div class="css-caixa-pequena">
+                <h3 class="css-seletor-titulo">Seletor: ID (#id)</h3>
+                <p class="css-usado"><span class="css-usado-texto">Usado:</span> Sim</p>
+                <p class="css-comentario">Comentário: Seleciona um elemento único com um ID específico. Utilizado para aplicar estilos únicos a elementos específicos como <code>#footer-text</code> e <code>#main-content</code>.</p>
+            </div>
+            <div class="css-caixa-pequena">
+                <h3 class="css-seletor-titulo">Seletor: Atributo ([atributo])</h3>
+                <p class="css-usado"><span class="css-usado-texto">Usado:</span> Não</p>
+                <p class="css-comentario">Comentário: Seleciona elementos com um atributo específico. Não foi utilizado em nenhuma página.</p>
+            </div>
+            <div class="css-caixa-pequena">
+                <h3 class="css-seletor-titulo">Seletor: Pseudo-classe (:pseudo-classe)</h3>
+                <p class="css-usado"><span class="css-usado-texto">Usado:</span> Sim</p>
+                <p class="css-comentario">Comentário: Seleciona elementos num estado específico. Utilizado para estilizar links quando são "hovered" numa página específica.</p>
+            </div>
+            <div class="css-caixa-pequena">
+                <h3 class="css-seletor-titulo">Seletor: Pseudo-elemento (::pseudo-elemento)</h3>
+                <p class="css-usado"><span class="css-usado-texto">Usado:</span> Não</p>
+                <p class="css-comentario">Comentário: Seleciona e estiliza uma parte específica de um elemento. Não foi utilizado em nenhuma página.</p>
+            </div>
+        </div>
+
+        <!-- Caixa grande para Combinadores de Seletores -->
+        <div class="css-caixa-grande">
+            <h2 class="css-subtitle">Combinadores de Seletores</h2>
+            <div class="css-caixa-pequena">
+                <h3 class="css-seletor-titulo">Combinador: Descendente ( )</h3>
+                <p class="css-usado"><span class="css-usado-texto">Usado:</span> Sim</p>
+                <p class="css-comentario">Comentário: Seleciona elementos que são descendentes de um elemento especificado. Utilizado para estilizar <code>&lt;p&gt;</code> dentro de <code>&lt;div&gt;</code> numa página específica. Utilizei nas páginas das Bandas, dos Blogues e do Curso.</p>
+            </div>
+            <div class="css-caixa-pequena">
+                <h3 class="css-seletor-titulo">Combinador: Filho (&gt;)</h3>
+                <p class="css-usado"><span class="css-usado-texto">Usado:</span> Não</p>
+                <p class="css-comentario">Comentário: Seleciona elementos que são filhos diretos de um elemento especificado. Não foi utilizado em nenhuma página.</p>
+            </div>
+            <div class="css-caixa-pequena">
+                <h3 class="css-seletor-titulo">Combinador: Adjacente (+)</h3>
+                <p class="css-usado"><span class="css-usado-texto">Usado:</span> Não</p>
+                <p class="css-comentario">Comentário: Seleciona elementos que são imediatamente precedidos por um elemento especificado. Não foi utilizado em nenhuma página.</p>
+            </div>
+            <div class="css-caixa-pequena">
+                <h3 class="css-seletor-titulo">Combinador: General Sibling (~)</h3>
+                <p class="css-usado"><span class="css-usado-texto">Usado:</span> Não</p>
+                <p class="css-comentario">Comentário: Seleciona elementos que são precedidos por um elemento especificado, não necessariamente imediatamente. Não foi utilizado em nenhuma página.</p>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

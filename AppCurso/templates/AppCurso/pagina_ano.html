@@ -1,0 +1,80 @@
+{% extends 'AppCurso/layout.html' %}
+
+{% block content %}
+    <div class="header-image">
+        </div>
+        <nav class="header-bar">
+            <div class="contentorlogin">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}?next={{ request.path }}" class="button logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}?next={{ request.path }}" class="button"><i class="fas fa-sign-in-alt"></i> Login</a>
+                {% endif %}
+                <a href="{% url 'curso:pagina_curso' %}" class="button home-button">
+                <i class="fa-solid fa-house"></i> Início
+                </a>
+            </div>
+            {% if request.user.is_authenticated %}
+                <span class="username">
+                    <i class="fas fa-user"></i>
+                    {{ request.user.username }}
+                </span>
+            {% endif %}
+        </nav>
+        <div class="conteinerTitulo">
+            <div class="tituloPagina">
+                <h1>{{ ano }}º ano da Faculdade</h1>
+            </div>
+        </div>
+        <div class="caixaprincipal">
+            <div class="textoprincipal">
+                <strong class="titulo-seccao">1º Semestre:</strong>
+                       {% if disciplinas_primeiro_semestre %}
+
+                            {% for disciplina in disciplinas_primeiro_semestre %}
+                                <li class="caixadisciplinas">
+                                        <a href="{% url 'curso:pagina_disciplina' disciplina.id %}">{{ disciplina.nome }}</a>
+
+                                </li>
+                            {% endfor %}
+
+                        {% else %}
+                            <p>Nenhuma disciplina disponível para este semestre.</p>
+                        {% endif %}
+
+            </div>
+        </div>
+        <div class="caixaprincipal">
+            <div class="textoprincipal">
+                <strong class="titulo-seccao">2º Semestre:</strong>
+                    {% if disciplinas_segundo_semestre %}
+
+                        {% for disciplina in disciplinas_segundo_semestre %}
+                            <li class="caixadisciplinas">
+                                <a href="{% url 'curso:pagina_disciplina' disciplina.id %}">{{ disciplina.nome }}</a>
+                            </li>
+                        {% endfor %}
+
+                    {% else %}
+                        <p>Nenhuma disciplina disponível para este semestre.</p>
+                    {% endif %}
+
+
+            </div>
+        </div>
+        <div class="conteinerTitulo">
+            <div class="conteinerbotoes">
+                {% if request.user.is_authenticated and userIsEditor %}
+                    {% if ano == 1 %}
+                        <a href="{% url 'curso:nova_disciplina' ano=1 %}"class="button add--button">
+                        <i class="fas fa-plus"></i>Criar Nova Disciplina para o 1º Ano
+                        </a>
+                    {% elif ano == 2 %}
+                        <a href="{% url 'curso:nova_disciplina' ano=2 %}"class="button add--button">
+                        <i class="fas fa-plus"></i>Criar Nova Disciplina para o 2º Ano
+                        </a>
+                    {% endif %}
+            {% endif %}
+            </div>
+        </div>
+{% endblock %}

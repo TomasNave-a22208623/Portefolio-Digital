@@ -1,0 +1,62 @@
+{
+    "The Beatles": {
+        "genero": "Rock",
+        "foto": "band_photos/beatles.jpeg",
+        "nacionalidade": "Britânica",
+        "anoDeCriacao": 1960
+    },
+    "Led Zeppelin": {
+        "genero": "Rock",
+        "foto": "band_photos/led_zeeplin.jpg",
+        "nacionalidade": "Britânica",
+        "anoDeCriacao": 1968
+    },
+    "Queen": {
+        "genero": "Rock",
+        "foto": "band_photos/Queen.jpg",
+        "nacionalidade": "Britânica",
+        "anoDeCriacao": 1970
+    },
+    "The Rolling Stones": {
+        "genero": "Rock",
+        "foto": "band_photos/rolling_stones.jpeg",
+        "nacionalidade": "Britânica",
+        "anoDeCriacao": 1962
+    },
+    "Pink Floyd": {
+        "genero": "Rock",
+        "foto": "band_photos/pink_flyod.jpeg",
+        "nacionalidade": "Britânica",
+        "anoDeCriacao": 1965
+    },
+    "AC/DC": {
+        "genero": "Rock",
+        "foto": "band_photos/ac_dc.jpg",
+        "nacionalidade": "Australiana",
+        "anoDeCriacao": 1973
+    },
+    "The Doors": {
+        "genero": "Rock",
+        "foto": "band_photos/Doors.JPG",
+        "nacionalidade": "Estado-Unidense",
+        "anoDeCriacao": 1965
+    },
+    "Nirvana": {
+        "genero": "Rock",
+        "foto": "band_photos/nirvana.jpeg",
+        "nacionalidade": "Estado-Unidense",
+        "anoDeCriacao": 1987
+    },
+    "Metallica": {
+        "genero": "Rock",
+        "foto": "band_photos/metallica.jpg",
+        "nacionalidade": "Estado-Unidense",
+        "anoDeCriacao": 1981
+    },
+    "Guns N' Roses": {
+        "genero": "Rock",
+        "foto": "band_photos/guns-n-roses.jpg",
+        "nacionalidade": "Estado-Unidense",
+        "anoDeCriacao": 1985
+    }
+}

@@ -1,0 +1,19 @@
+{% extends 'festivais/layout.html' %}
+
+{% block content %}
+<main>
+    <a href="{% url 'lista_festivais' %}"><button>Voltar para a lista de festivais</button></a>
+    <h1>Detalhes do Festival</h1>
+    <h2>{{ festival.nome }}</h2>
+    <img src="{{ festival.imagem.url }}" width="250px">
+    <p>Data de Início: {{ festival.data_inicio }}</p>
+    <p>Data de Fim: {{ festival.data_fim }}</p>
+    <p>Localização: {{ festival.localizacao.nome }}</p>
+    <h3>Bandas:</h3>
+    <ul>
+        {% for banda in festival.bandas.all %}
+            <li>{{ banda.nome }} - {{ banda.genero }}</li>
+        {% endfor %}
+    </ul>
+</main>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'AppCurso/layout.html' %}
+
+{% block content %}
+    <div class="header-image">
+    </div>
+        <nav class="header-bar">
+            <div class="contentorlogin">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}?next={{ request.path }}" class="button logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}?next={{ request.path }}" class="button"><i class="fas fa-sign-in-alt"></i> Login</a>
+                {% endif %}
+                <a href="{% url 'curso:pagina_curso' %}" class="button home-button">
+                <i class="fa-solid fa-house"></i> Início
+                </a>
+            </div>
+            {% if request.user.is_authenticated %}
+                <span class="username">
+                    <i class="fas fa-user"></i>
+                    {{ request.user.username }}
+                </span>
+            {% endif %}
+        </nav>
+        <div class="conteinerTitulo">
+            <div class="tituloPagina">
+                <h1>Projetos</h1>
+            </div>
+            <div class="subtituloPagina">
+                <p>Aqui estão os meus projetos mais importantes que realizei durante a minha formação escolar</p><br>
+            </div>
+        </div>
+        {% if projetos %}
+            {% for projeto in projetos %}
+                 <div class="caixaProjeto">
+                    <div class="projeto-conteiner">
+                        <div class="projeto-texto">
+                        <Strong><a href="{% url 'curso:pagina_projeto' projeto.id %}"class="projeto-link">{{ projeto.nome }}</a></Strong>
+                        <strong class="titulo-seccao">{{ projeto.disciplina }}</strong>
+                        </div>
+                        <img src="{{ projeto.imagem.url }}" alt="{{ projeto_associado.nome }}" class="projetos-image">
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Nenhuma projeto disponivel</p>
+        {% endif %}
+
+        <div class="conteinerTitulo">
+            <div class="conteinerbotoes">
+                {% if request.user.is_authenticated and userIsEditor  %}
+                    <a href="{% url 'curso:novo_projeto' %}"class="button add--button">
+                        <i class="fas fa-plus"></i>Criar novo Projeto
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
+{% endblock %}

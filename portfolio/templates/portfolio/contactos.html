@@ -1,0 +1,61 @@
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/estilos.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/5d1319edfb.js" crossorigin="anonymous"></script>
+    <title>Contactos</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'landing_page' %}">Home</a></li>
+                <li><a href="{% url 'sobremim' %}">Sobre Mim</a></li>
+                <li><a href="{% url 'curso:pagina_listaProjetos' %}">Projetos</a></li>
+                <li><a href="{% url 'programacaoWeb' %}">Programação Web</a></li>
+                <li><a href="{% url 'contactos' %}">Contactos</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}?next={{ request.path }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}?next={{ request.path }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                    <li><a><span class="username"><i class="fas fa-user"></i>{{ request.user.username }}</span></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h1>Contactos</h1>
+                    <h2>Não exite em entrar em contacto </h2>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>tomasdasilvanave@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>914805180</p>
+                    </div>
+                </div>
+                <div class="contact-icons">
+                <a href="https://www.instagram.com/tomas_nave_?igsh=anB6aGk5cjdzaWxh" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/TomasNave-a22208623" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/tom%C3%A1s-nave-26733b277" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

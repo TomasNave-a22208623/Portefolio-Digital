@@ -1,0 +1,22 @@
+{% extends 'autenticacao/layout.html' %}
+
+{% block content %}
+    <h3>Registo</h3>
+
+    <form action="{% url 'registo' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="O seu username..">
+        <br>
+        <input type="text" name="nome" placeholder="O seu nome..">
+        <br>
+        <input type="text" name="apelido" placeholder="O seu apelido..">
+        <br>
+        <input type="email" name="email" placeholder="O seu email..">
+        <br>
+        <input type="password" name="password" placeholder="Defina a sua Palavra-chave..">
+        <br>
+        <button type="submit" class="submit" >Criar</button>
+    </form>
+
+    <a href="{% url 'login' %}"><button>Cancelar</button></a>
+{% endblock %}

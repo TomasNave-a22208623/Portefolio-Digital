@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heróis da DC</title>
+    <style>
+        body {
+            background: black;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Heróis da DC</h1>
+        <nav>
+            <a href="{% url 'DCapp:index' %}">DC HUB</a>
+            <a href="{% url 'DCapp:viloes' %}">Vilões da DC</a>
+        </nav>
+    </header>
+    <h1>Batman</h1>
+    <h1><img src="{{ MEDIA_URL }}fotos_dc/batman.jpeg" alt="Batman"> Batman</h1>
+    <p>Batman, também conhecido pelas alcunhas Homem-Morcego, Cavaleiro das Trevas, Cruzado Encapuzado e Maior Detetive do Mundo,[1] é uma personagem fictícia e super-herói da editora norte-americana DC Comics, criado pelo escritor Bill Finger a partir dos esboços do desenhista Bob Kane, aparecendo pela primeira vez na revista Detective Comics #27 (maio de 1939) com o nome "Bat-Man".</p>
+    <p>A identidade secreta do Batman é Bruce Wayne, um bilionário americano, playboy, magnata de negócios, filantropo e dono da corporação Wayne Enterprises. Depois de testemunhar o assassinato dos seus pais enquanto criança, Wayne jurou vingança com um ideal de justiça contra os criminosos. Wayne, então, treina física e intelectualmente e cria uma persona inspirada no morcego para combater o crime.[2] Batman opera na cidade fictícia Gotham, sendo ajudado por seu mordomo Alfred Pennyworth, o comissário de polícia Jim Gordon e diversos aliados vigilantes, sendo Robin seu parceiro mais recorrente. Ao contrário da maioria dos super-heróis, Batman não tem superpoderes; assim, na sua guerra contra o crime, utiliza seu intelecto de gênio, sua perícia em artes marciais e sua destreza física — bem como sua riqueza, que lhe garante um arsenal de última geração. Uma grande variedade de vilões compõe a galeria de inimigos do Batman, incluindo o Coringa, seu nêmesis.</p>
+    <h1><img src="{{ MEDIA_URL }}fotos_dc/~simbolo batman.png" alt="Batman"> Simbolo</h1>
+
+    <footer>
+        <p>&copy; 2024 Universo DC - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

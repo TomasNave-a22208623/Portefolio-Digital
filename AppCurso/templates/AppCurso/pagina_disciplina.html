@@ -1,0 +1,124 @@
+{% extends 'AppCurso/layout.html' %}
+
+{% block content %}
+    <div class="header-image">
+    </div>
+        <nav class="header-bar">
+            <div class="contentorlogin">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}?next={{ request.path }}" class="button logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}?next={{ request.path }}" class="button"><i class="fas fa-sign-in-alt"></i> Login</a>
+                {% endif %}
+                <a href="{% url 'curso:pagina_curso' %}" class="button home-button">
+                <i class="fa-solid fa-house"></i> Início
+                </a>
+                {% if disciplina.ano == 1 %}
+                    <a href="{% url 'curso:pagina_ano' ano=1 %}" class="button home-button">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                    </a>
+                {% elif disciplina.ano == 2 %}
+                    <a href="{% url 'curso:pagina_ano' ano=2 %}" class="button home-button">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                    </a>
+                {% endif %}
+            </div>
+            {% if request.user.is_authenticated %}
+                <span class="username">
+                    <i class="fas fa-user"></i>
+                    {{ request.user.username }}
+                </span>
+            {% endif %}
+        </nav>
+        <div class="conteinerTitulo">
+            <div class="tituloPagina">
+                <h1>{{ disciplina.nome }}</h1>
+            </div>
+        </div>
+        <div class="caixaprincipal">
+            <div class="textoprincipalDisciplina">
+                <div class="contentor-texto">
+                    <strong class="titulo-seccao">Apresentação:</strong>
+                    <div class="textoApresentacao" style="white-space: pre-line;">
+                        {{ disciplina.apresentacao }}
+                    </div>
+                </div>
+                <div class="contentor-texto">
+                    <strong class="titulo-seccao">Programa:</strong>
+                    <div class="textoApresentacao"style="white-space: pre-line;">
+                        {{ disciplina.programa }}
+                    </div>
+                </div>
+                <div class="contentor-texto">
+                    <div class="contentordetalhes">
+                        <div class="detalhe-item">
+                            <strong class="titulo-seccao">Ano:</strong>
+                            <div class="textoApresentacao">{{ disciplina.ano }}º</div>
+                        </div>
+                    </div>
+                    <div class="contentordetalhes">
+                        <div class="detalhe-item">
+                            <strong class="titulo-seccao">Semestre:</strong>
+                            <div class="textoApresentacao"> {{ disciplina.semestre }}º</div>
+                        </div>
+                    </div>
+                    <div class="contentordetalhes">
+                        <div class="detalhe-item">
+                            <strong class="titulo-seccao">Ects:</strong>
+                            <div class="textoApresentacao"> {{ disciplina.ects }}</div>
+                        </div>
+                    </div>
+                    <div class="contentordetalhes">
+                        <div class="detalhe-item">
+                            <strong class="titulo-seccao">Area Cientifica:</strong>
+                            <div class="textoApresentacao"> {{ disciplina.area_cientifica }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if disciplina.linguagens.all  %}
+        <div class="caixaprincipal">
+            <div class="textoprincipal">
+                <strong class="titulo-seccao">Linguagens utilizadas:</strong>
+                <p>
+                {% for linguagem in disciplina.linguagens.all %}
+                    <div class="textoApresentacao">{{ linguagem.nome }}</div>
+                {% endfor %}
+
+            </div>
+        </div>
+        {% endif %}
+
+        {% if projeto_associado %}
+            <div class="caixaProjeto">
+                <div class="projeto-conteiner">
+                    <div class="projeto-texto">
+                        <strong class="titulo-seccao">Projeto:</strong>
+                        <a href="{% url 'curso:pagina_projeto' projeto_id=projeto_associado.id %}" class="projeto-link">{{ projeto_associado.nome }}</a>
+                    </div>
+                    <img src="{{ projeto_associado.imagem.url }}" alt="{{ projeto_associado.nome }}" class="projeto-image">
+                </div>
+            </div>
+        {% endif %}
+
+
+
+        <div class="conteinerTitulo">
+            <div class="conteinerbotoes">
+                {% if request.user.is_authenticated and userIsEditor  %}
+                    <a href="{% url 'curso:edita_disciplina' disciplina.id %}"class="button add--button">
+                        <i class="fas fa-edit"></i>Editar informação da Disicplina
+                        </a>
+                {% endif %}
+
+                {% if request.user.is_authenticated and userIsEditor  %}
+                    <a href="{% url 'curso:apaga_disciplina' disciplina.id %}"class="button add--button">
+                        <i class="fas fa-trash-alt"></i>Apagar Disciplina
+                        </a>
+                {% endif %}
+            </div>
+        </div>
+
+
+{% endblock %}

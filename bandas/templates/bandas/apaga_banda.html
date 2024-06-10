@@ -1,0 +1,12 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+    <h3>Apagar Banda</h3>
+    <p>Você tem certeza que deseja apagar a banda "{{ banda.nome }}"?</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Sim, Apagar">
+    </form>
+    <p>
+    <a href="{% url 'index' %}"><button>Voltar</button></a>
+{% endblock %}

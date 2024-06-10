@@ -1,0 +1,87 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+         <div class="header-image">
+            <div class="header-text">Rock Lusófona</div>
+        </div>
+        <nav class="header-bar">
+            <div class="contentorlogin">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}?next={{ request.path }}" class="button logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}?next={{ request.path }}" class="button"><i class="fas fa-sign-in-alt"></i> Login</a>
+                {% endif %}
+                <a href="{% url 'index' %}" class="button home-button">
+                <i class="fa-solid fa-house"></i> Início
+                </a>
+            </div>
+            <div class="contentorEdicao">
+                {% if request.user.is_authenticated and userIsEditor %}
+                    <a href="{% url 'edita_banda' banda.id %}" class="button edit-button">
+                    <i class="fas fa-edit"></i> Editar informação da Banda
+                    </a>
+                {% endif %}
+                {% if request.user.is_authenticated and userIsEditor %}
+                <a href="{% url 'apaga_banda' banda.id %}" class="button delete-button">
+                    <i class="fas fa-trash-alt"></i> Apagar Banda
+                </a>
+                {% endif %}
+                
+                {% if request.user.is_authenticated %}
+                        <span class="username">
+                            <i class="fas fa-user"></i>
+                            {{ request.user.username }}
+                        </span>
+                {% endif %}
+            </div>
+        </nav>
+           
+        <h1 class="banda-name">{{ banda.nome }}</h1>
+        <div class= "banda-container">
+            <div class="banda-bio">
+                <p><strong>Biografia:</strong></p>
+                <p>{{ banda.biografia }}</p>
+            </div>
+            <div class="banda-foto">
+                <img src="{{ banda.foto.url }}" >
+            </div>
+        </div>
+            <div class="banda-info">
+                <p><strong>Gênero:</strong> {{ banda.genero }}</p>
+                <p><strong>Nacionalidade:</strong> {{ banda.nacionalidade }}</p>
+                <p><strong>Ano de Criação:</strong> {{ banda.anoDeCriacao }}</p>
+            </div>
+
+                </a>
+            <div class="album-title">
+                <h3>Álbuns:</h3>
+            </div>
+                    <div class="albums-container">
+                    {% if albuns %}
+                        <ul>
+                        {% for album in albuns %}
+                            {% if album.id %}
+                                <li class="album-item">
+                                    <div class="album-box">
+                                        <div class="album-text">
+                                            <a href="{% url 'album' album.id %}" class="album-link">{{ album.titulo }}</a>
+                                            <p><span style="color: white;">{{ album.ano }}</p>
+                                        </div>
+                                        <img src="{{ album.capa.url }}" alt="{{ album.titulo }}" class="album-image">
+                                    </div>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>Nenhum álbum disponível para esta banda.</p>
+                    {% endif %}
+                    </div>
+                    <div class= "margemInserir">
+                    {% if request.user.is_authenticated and userIsEditor %}
+                        <a href="{% url 'novo_album' banda.id %}" class="button add--button">
+                            <i class="fas fa-plus"></i> Inserir novo Álbum
+                        </a>
+            {% endif %}
+            </div>
+{% endblock %}

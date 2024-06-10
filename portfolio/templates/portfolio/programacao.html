@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Seu Projeto Django</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/estilos.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/5d1319edfb.js" crossorigin="anonymous"></script>
+</head>
+<body class="pagina-sobre">
+    <div class="pagina-conteudoProg">
+        <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'landing_page' %}">Home</a></li>
+                <li><a href="{% url 'sobremim' %}">Sobre Mim</a></li>
+                <li><a href="{% url 'curso:pagina_listaProjetos' %}">Projetos</a></li>
+                <li><a href="{% url 'programacaoWeb' %}">Programação Web</a></li>
+                <li><a href="{% url 'contactos' %}">Contactos</a></li>
+                {% if request.user.is_authenticated %}
+                  <li><a href="{% url 'logout' %}?next={{ request.path }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                {% else %}
+                  <li><a href="{% url 'login' %}?next={{ request.path }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                <li><a><span class="username"><i class="fas fa-user"></i>{{ request.user.username }}</span></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <h1>As Minhas Capacidades em Desenvolvimento Web</h1>
+        <!-- Seção sobre o projeto -->
+        <section class="containerSobreProg">
+            <div class="caixaSobreProg">
+                <div class="caixa-sobreProg">
+                    <p>Esta pagina vai explicar as capacidades que obti ao desenvolver este projeto. Aqui está uma visão detalhada sobre cada uma das páginas:</p>
+                    <br>
+
+                    <ul>
+                        <li><strong>Página do Portfólio:</strong> Esta página serve como uma vitrine digital do trabalho realizado durante o percurso acadêmico. Além de funcionar como um portfólio convencional, esta página atua como um hub central, proporcionando acesso fácil e intuitivo às demais páginas do projeto.</li>
+                        <li><strong>Página das Bandas:</strong> A página dedicada às bandas apresenta uma coleção detalhada de álbuns e músicas, oferecendo uma plataforma para explorar e apreciar a diversidade musical. Utilizando tecnologias como Python e Django, esta página demonstra competência na criação de aplicações web dinâmicas e interativas.</li>
+                        <li><strong>Página do Curso:</strong> Esta seção é uma fonte abrangente de informações sobre o curso de Engenharia Informática, abordando disciplinas, conteúdos programáticos e projetos desenvolvidos ao longo do curso. Com uma abordagem educacional estruturada, esta página visa enriquecer a compreensão dos visitantes sobre a área de estudo.</li>
+                        <li><strong>Página do Blog:</strong> A página do blog é um espaço interativo onde os usuários podem criar e compartilhar artigos relacionados à área de Engenharia Informática. Incorporando recursos avançados de autenticação e gerenciamento de permissões, esta página promove a troca de conhecimentos e experiências entre a comunidade acadêmica</li>
+                        <li><strong>Página de Meteorologia:</strong> Uma adição inovadora ao projeto, esta página descreve uma API desenvolvida a partir da API do IPMA, fornecendo informações meteorológicas de maneira acessível e envolvente. Demonstrando habilidades na integração de APIs externas e na criação de serviços personalizados, esta seção destaca a capacidade de inovação e adaptação do autor.</li>
+                    </ul>
+                    <p>Além disso, o projeto inclui uma página de login que oferece aos usuários a possibilidade de acessar e interagir com todas as páginas do projeto. Com recursos de registro e recuperação de conta, juntamente com medidas de segurança aprimoradas, esta página garante uma experiência de usuário confiável e segura.</p>
+                    <br>
+                    <p>Tecnologicamente, o projeto faz amplo uso de Python, Django, HTML, CSS e JavaScript, proporcionando interfaces dinâmicas e responsivas que enriquecem a experiência do usuário em todas as páginas. Esta realização exemplifica o compromisso do autor com a excelência acadêmica e a inovação tecnológica, refletindo sua paixão pela Engenharia Informática.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de tecnologias -->
+        <section id="technologies">
+            <h2>Tecnologias Utilizadas</h2>
+
+            <div class="technology">
+                <h3>Python</h3>
+                <h4>Conteúdos:</h4>
+                <p>
+                    - Sintaxe, operadores, controle de fluxo e tipos de dados<br>
+                    - Funções e módulos<br>
+                    - Gestão de arquivos e pastas<br>
+                    - Classes
+                </p>
+                <h4>Utilização:</h4>
+                <p>
+                 Python foi a linguagem principal escolhida para o desenvolvimento deste projeto. Utilizou-se Python para uma variedade de tarefas, desde a lógica de negócios até a manipulação de dados. As principais áreas de aplicação incluem a criação de estruturas de dados personalizadas, gerenciamento de arquivos e pastas, bem como a implementação de funcionalidades específicas do projeto. A flexibilidade e a vasta gama de bibliotecas disponíveis em Python contribuíram significativamente para a eficiência e a robustez do projeto
+                </p>
+            </div>
+
+            <div class="technology">
+                <h3>Django</h3>
+                <p>
+                <h4>Conteúdos:</h4>
+                <p>
+                    – Web frameworks<br>
+                    – Arquitetura MVT <br>
+                    – Urls, views e templates<br>
+                    – Linguagem template<br>
+                    – Modelação de base de dados, ORM<br>
+                    – Formulários<br>
+                    – Autenticação<br>
+                    – Implantação na cloud
+                </p>
+                <h4>Utilização:</h4>
+                <p>
+                 Django foi o framework web escolhido para o backend deste projeto. Utilizando o padrão de arquitetura Model-View-Template (MVT), o Django ofereceu uma estrutura organizada e coesa para o desenvolvimento de aplicativos web dinâmicos. Desde a configuração inicial do projeto até a implementação de funcionalidades avançadas, como autenticação de usuários e modelagem de banco de dados usando o ORM do Django, este framework proporcionou uma base sólida e escalável para a construção de todas as páginas do projeto.
+                </p>
+            </div>
+
+            <div class="technology">
+                <h3>HTML e CSS</h3>
+                <p>
+                <h4>Conteúdos:</h4>
+                <p>
+                    – HTML e seus elementos <br>
+                    – Formulários para envio de dados<br>
+                    – HTML5 e elementos semânticos<br>
+                    – CSS e seus seletores, para estilização de conteúdos<br>
+                    – Propriedades CSS<br>
+                    – Design responsivo e layouts dinâmicos<br>
+                    – Efeitos e animações CSS<br>
+                    – Bootstrap<br>
+                </p>
+                <h4>Utilização:</h4>
+                <p>
+                 HTML e CSS foram os alicerces para a criação das interfaces de usuário em todas as páginas do projeto. Utilizando HTML5 e elementos semânticos, juntamente com as propriedades avançadas de CSS, como seletores e layouts responsivos, conseguio se criar páginas web visualmente atraentes e facilmente navegáveis.
+                </p>
+            </div>
+
+            <div class="technology">
+                <h3>JavaScript </h3>
+                <p>
+                <h4>Conteúdos:</h4>
+                <p>
+                    – Programação Orientada a Eventos<br>
+                    – Manipulação do DOM <br>
+                    – JSON e APIs<br>
+                    – Single Page Applications
+                </p>
+                <h4>Utilização:</h4>
+                <p>
+                 JavaScript desempenhou um papel crucial na interatividade e na experiência do usuário em algumas partes do projeto. Por exemplo, na página do portfólio, implementamos um botão de alternância de modo escuro usando JavaScript, proporcionando aos usuários uma opção de personalização adicional. Além disso, a criação de um relógio dinâmico na aplicação demonstra o uso prático do JavaScript para manipulação do DOM e programação orientada a eventos.
+                </p>
+            </div>
+
+            <!-- Adicione outras tecnologias utilizadas no seu projeto -->
+        </section>
+
+        <!-- Seção de vídeos -->
+        <section id="videos">
+            <h2>Vídeos</h2>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <h3>Os meus Websites</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DpWQzOxQqrM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-wrapper">
+                    <h3>Django hands-on</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/w2188VptEyY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seu rodapé aqui -->
+    </div>
+</body>
+</html>

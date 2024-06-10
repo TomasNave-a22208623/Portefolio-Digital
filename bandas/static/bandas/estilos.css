@@ -1,0 +1,601 @@
+* {
+    font-family: "Radio Canada Big";
+}
+
+.new-rocker-regular {
+  font-family: "New Rocker", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+/* Classes */
+.header-image {
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    background-image: url('/static/bandas/cabecalhoBandasFinal2.png'); /* Caminho para sua imagem de rock */
+    background-size: cover; /* Ajusta a imagem para cobrir o contêiner */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-position: center; /* Centraliza a imagem no elemento */
+    width: 100%; /* Largura total do contêiner */
+    height: 144px; /* Altura fixa para o cabeçalho */
+    margin: 0; /* Remove margem */
+    padding: 0; /* Remove padding */
+}
+
+.header-text {
+    color: #fff; /* Cor do texto */
+    font-size: 28px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    text-align: center; /* Centraliza o texto */
+    font-family: "New Rocker", system-ui;
+}
+
+.header-bar {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0; /* Remove qualquer margem */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total do elemento */
+}
+
+
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+
+
+.button {
+    color: #fff;
+    background-color: #444;
+    border: 2px solid #000; /* Borda preta */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 6px 12px; /* Padding menor */
+    text-decoration: none;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+    font-size: 14px; /* Tamanho da fonte ajustado */
+    margin: 5px; /* Margem para espaçamento */
+    width: auto; /* Largura automática */
+    height: auto; /* Altura automática */
+}
+
+.button:hover {
+    border-color: #ff0000;
+    color: #ff0000;
+}
+
+.edit-button {
+    background-color: #444
+}
+
+.delete-button {
+    background-color: #444
+}
+
+.add--button {
+    background-color: #444
+}
+
+.home-button {
+    background-color: #444; /* Cor de fundo para o botão de voltar ao início */
+}
+
+.back-button {
+    background-color: #444; /* Cor de fundo para o botão de voltar ao início */
+}
+
+.button i {
+    margin-right: 5px;
+}
+
+.button.logout {
+    color: #ff0000; /* Texto vermelho para o botão de logout */
+}
+
+.username {
+    margin-right: 10px;
+}
+
+.username i {
+    margin-right: 5px;
+}
+
+.centered {
+    text-align: center; /* Centraliza o texto */
+}
+
+.centered-content {
+    margin: 20px auto; /* Adiciona margem e centraliza horizontalmente */
+    max-width: 800px; /* Define uma largura máxima */
+}
+
+
+.band-item {
+    margin-bottom: 20px; /* Reduz a margem inferior das caixas */
+    margin-right: 30px; /* Adiciona margem à direita das caixas */
+    margin-left: 100px; /* Adiciona margem à esquerda das caixas */
+}
+
+.band-info {
+    display: flex;
+    align-items: center;
+    background-color:#333 ; /* Cor de fundo dos retângulos */
+    padding: 15px; /* Reduz o preenchimento interno */
+    border-radius: 10px; /* Cantos arredondados */
+    border: 1px solid #151515; /* Borda fina e cor */
+    max-width: 500px;
+}
+
+.band-image {
+    width: 180px; /* Reduz o tamanho da imagem */
+    height: auto; /* Mantém a proporção */
+    border-radius: 8px; /* Cantos arredondados */
+    margin-left: 15px; /* Adiciona margem à esquerda da imagem */
+    border: 1px solid #151515; /* Borda fina e cor */
+}
+
+.band-text {
+    flex-grow: 1; /* Faz o texto ocupar o espaço restante */
+    margin: 0 auto;
+}
+
+.link-underlineRed {
+    text-decoration-color: red; /* Vermelho */
+}
+
+.banda-container {
+    display: flex;
+    align-items: center;
+}
+
+.banda-info {
+    display: block;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.banda-foto {
+    margin-right: 200px;
+
+}
+
+
+.banda-foto img {
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 325px; /* Aumenta a largura da foto */
+}
+
+.banda-name {
+    color: red;
+    padding-left: 20px;
+}
+
+.banda-bio {
+    border-radius: 5px;
+    border: 3px solid black;
+    background-color: #333;
+    text-align: justify;
+    flex-grow: 1;
+    width: 300px;
+    height: auto;
+    box-sizing: border-box;
+    line-height: 1.2;
+    font-size: 14px;
+    white-space: pre-line;
+    overflow-y: auto;
+    padding-left: 20px; /* Adiciona um recuo para cada item da lista */
+    padding-right: 20px;
+}
+
+
+
+.albums-container {
+    margin: 20px; /* Espaçamento da borda da página */
+    margin-right: 200px;
+}
+
+.album-item {
+    list-style: none; /* Remove marcadores da lista */
+    margin-bottom: 20px; /* Espaçamento entre itens */
+    justify-content: space-between;
+}
+
+.album-box {
+    display: flex;
+    align-items: center;
+    background-color: #333; /* Cor de fundo cinzenta */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Cantos arredondados */
+    border: 1px solid #444; /* Borda fina */
+    width: 100%; /* Largura total */
+    max-width: 1000px; /* Largura máxima */
+    width:670px;
+    margin: 20px 0; /* Centralizar a caixa horizontalmente */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.album-text {
+    flex-grow: 1; /* Faz o texto ocupar o espaço restante */
+    margin: 0 auto;
+}
+
+
+
+.album-link {
+    color: red; /* Cor do link */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 18px; /* Tamanho da fonte */
+    margin-right: 20px; /* Espaçamento à direita */
+    flex-grow: 1; /* Faz o link ocupar o espaço restante */
+}
+
+.album-link:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.album-image {
+    float: right;
+    width: 100px; /* Ajuste a largura da imagem */
+    height: auto; /* Mantém proporção */
+    border-radius: 5px; /* Cantos arredondados */
+    border: 1px solid #151515; /* Borda fina */
+}
+
+
+.album-title {
+    display: block;
+    margin-top: 10px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color:red;
+}
+
+.banda-button-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.banda-button-container-right{
+    margin-right:15px;
+}
+
+.musica-conteiner-def{
+    word-spacing : 10px;
+}
+
+.banda-button-container-left{
+}
+
+.margem{
+    margin-left:20px;
+}
+
+.margemInserir{
+    margin-left:50px;
+}
+
+.albumfoto{
+    margin-left:20px;
+}
+
+
+.musica-box {
+    display: flex;
+    align-items: center;
+    background-color: #333; /* Cor de fundo cinzenta */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Cantos arredondados */
+    border: 1px solid #444; /* Borda fina */
+    width: 100%; /* Largura total */
+    max-width: 1000px; /* Largura máxima */
+    width:670px;
+    margin: 20px 0; /* Centralizar a caixa horizontalmente */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+    height: 50px;
+}
+
+.musica-letra {
+    font-size: 16px;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    white-space: pre-line; /* Força quebras de linha */
+}
+
+
+/* Estilo para as informações da música */
+.musica-info {
+    font-size: 16px;
+    color: solid white; /* Cor do texto mais suave */
+    margin-top: 10px; /* Espaçamento superior */
+}
+
+.contentorEdicao{
+
+}
+
+.contentorEdicao .button {
+    margin: 0 5px; /* Adiciona margem horizontal entre os botões */
+}
+
+.contentorlogin{
+    padding: 15px;
+}
+
+
+
+/* IDs */
+#footer-text {
+    color: #aaa;
+    font-size: 14px;
+    text-align: center;
+}
+
+#main-content {
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+}
+
+
+
+
+
+/* Additional styles for dark theme */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Radio Canada Big', sans-serif;
+    margin: 0; /* Remove margem padrão */
+    padding: 0; /* Remove padding padrão */
+}
+
+header {
+    margin: 0; /* Remove qualquer margem */
+    padding: 0; /* Remove qualquer padding */
+}
+
+footer p {
+    color: #888;
+    font-size: 12px;
+    text-align: center;
+    margin: 0; /* Remove margem padrão */
+    padding: 10px; /* Adiciona padding para espaçamento interno */
+}
+
+
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Ajusta o tamanho da fonte base */
+    }
+
+    .header-image {
+        height: 120px; /* Reduz a altura do cabeçalho */
+    }
+
+    .header-bar {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        padding: 5px; /* Reduz o padding */
+    }
+
+    .contentorlogin {
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .button {
+        font-size: 12px; /* Reduz o tamanho da fonte dos botões */
+        padding: 4px 8px; /* Reduz o padding dos botões */
+        margin: 3px; /* Reduz a margem dos botões */
+    }
+
+    .caixaProjeto {
+        margin: 10px;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: flex; /* Exibe conteúdo em linha */
+        flex-direction: row; /* Alinha itens em linha */
+        align-items: center; /* Centraliza itens verticalmente */
+        justify-content: space-between; /* Distribui os itens horizontalmente */
+    }
+
+    .projeto-texto {
+        margin-right: 20px; /* Espaçamento à direita do texto */
+    }
+
+    .projeto-link {
+        font-size: 14px;
+    }
+
+    .projeto-image {
+        max-width: 50%; /* Reduz a largura máxima da imagem */
+        height: auto;
+    }
+
+
+    .botaoAno {
+        font-size: 14px; /* Reduz o tamanho da fonte dos botões de ano */
+        padding: 4px 8px; /* Reduz o padding dos botões de ano */
+        margin: 5px; /* Reduz a margem dos botões de ano */
+    }
+
+    .conteinerTitulo {
+        margin: 10px; /* Reduz a margem das caixas do título */
+    }
+
+    .tituloPagina h1 {
+        font-size: 24px; /* Reduz o tamanho da fonte do título principal */
+    }
+
+    .subtituloPagina {
+        font-size: 16px; /* Reduz o tamanho da fonte do subtítulo */
+    }
+
+    .subtituloPaginaAzul {
+        font-size: 16px; /* Reduz o tamanho da fonte do subtítulo azul */
+    }
+
+    .conteinerbotoes {
+        margin-top: 10px; /* Reduz a margem superior dos contêineres de botões */
+        margin-bottom: 10px; /* Reduz a margem inferior dos contêineres de botões */
+    }
+
+    .caixaprincipal {
+        margin: 10px; /* Reduz a margem externa */
+        padding: 15px; /* Adiciona padding interno */
+        font-size: 14px; /* Reduz o tamanho da fonte dentro da caixa principal */
+    }
+
+    .textoprincipal {
+        margin: 10px; /* Reduz as margens internas do texto principal */
+    }
+
+    .contentor-texto {
+        margin-top: 20px; /* Ajusta a margem superior */
+        margin-bottom: 20px; /* Ajusta a margem inferior */
+        margin: 5px 0;
+    }
+
+
+    .titulo-seccao {
+        font-size: 16px; /* Reduz o tamanho da fonte do título das seções */
+    }
+
+    .textoApresentacao {
+        font-size: 14px; /* Reduz o tamanho da fonte do texto de apresentação */
+        margin-left: 10px; /* Aumenta a margem à esquerda */
+        margin-right: 10px; /* Aumenta a margem à direita */
+    }
+
+    .header-image {
+        height: 100px; /* Ajuste a altura conforme necessário */
+        background-size: cover; /* Ajusta a imagem para cobrir todo o contêiner */
+        background-position: center; /* Centraliza a imagem */
+        margin: 0; /* Remove margens */
+        padding: 0; /* Remove padding */
+    }
+
+
+    .caixadisciplinas {
+        display: block; /* Garante que as caixas fiquem em bloco */
+        width: 100%; /* Faz com que as caixas ocupem toda a largura disponível */
+        box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+        margin: 10px 0; /* Margem inferior e superior para espaçamento entre caixas */
+        padding: 10px; /* Adiciona padding interno */
+    }
+
+    .caixadisciplinas a {
+        font-size: 14px; /* Ajusta o tamanho da fonte dos links */
+        white-space: normal; /* Permite que o texto quebre em várias linhas */
+        word-wrap: break-word; /* Permite quebra de palavras longas */
+    }
+
+
+    .contentordetalhes {
+        display: flex; /* Ajusta o layout dos detalhes para flexível */
+        flex-direction: column; /* Alinha itens em coluna */
+        margin: 5px 0; /* Ajusta as margens dos contêineres de detalhes */
+    }
+
+    .detalhe-item {
+        margin: 5px 0; /* Ajusta a margem entre os itens de detalhes */
+    }
+
+    .textoprincipalDisciplina {
+        margin: 10px; /* Reduz as margens internas do texto principal */
+    }
+
+    .projeto-imageprojeto {
+        max-width: 100%; /* Define a largura máxima da imagem como 100% da largura da caixa */
+        height: auto; /* Permite que a altura seja ajustada automaticamente para manter a proporção */
+        display: block; /* Garante que a imagem não gere espaços extras */
+        margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    }
+
+    contentorEdicao a.button {
+        display: block;
+        margin-bottom: 10px; /* Adicione um espaçamento vertical entre os botões */
+    }
+
+    .contentorEdicao {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contentorEdicao a.button {
+        margin-bottom: 10px; /* Adicione margem inferior para espaçamento entre os botões */
+    }
+
+
+    .projetos-image {
+        width: auto; /* Ajustar a largura automaticamente */
+        height: 75px; /* Ajustar a altura automaticamente */
+        max-width: 110px; /* Definir a largura máxima como 100% */
+        max-height: 75px; /* Definir a altura máxima */
+    }
+
+    .projeto-conteiner {
+        margin: 5px; /* Reduzir a margem entre o conteúdo do projeto e a caixa do projeto */
+    }
+
+
+
+.css-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.css-title, .css-subtitle {
+    text-align: center;
+}
+
+.css-caixa-grande {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.css-caixa-pequena {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.css-seletor-titulo {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.css-usado {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.css-comentario {
+    margin-top: 10px;
+}
+
+.css-usado-texto {
+    font-weight: bold;
+    color: #007bff;
+}

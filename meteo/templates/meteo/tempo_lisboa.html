@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'meteo/estilos.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/5d1319edfb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="nav-button"><a href="{% url 'meteo:inicio' %}"><i class="fa-solid fa-arrow-left"></i> Voltar</a></li>
+        </ul>
+    </nav>
+    <div class="content-wrapper">
+        <h1 class="main-title">Tempo de Hoje em Lisboa</h1>
+        <div class="weather-container">
+            <h1 class="city-title"><span class="city">{{ cidade }}</span></h1>
+            <div class="weather-info">
+                {% if icon_url %}
+                    <img src="{{ icon_url }}" class="weather-icon" alt="Icone de tempo">
+                {% else %}
+                    <p class="no-image">Não encontrou a imagem</p>
+                {% endif %}
+                <div class="weather-details">
+                    <p class="weather-item">Data: <span class="date">{{ dataDeHoje }}</span></p>
+                    <p class="weather-item">Temperatura Mínima: <span class="min-temp">{{ min_temp }}°C</span></p>
+                    <p class="weather-item">Temperatura Máxima: <span class="max-temp">{{ max_temp }}°C</span></p>
+                    <p class="weather-item">Descrição do Tempo: <span class="description">{{ descricaoTempo }}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

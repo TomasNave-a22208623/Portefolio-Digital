@@ -1,0 +1,11 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+    <h3>Apagar Álbum - {{ album.titulo }}</h3>
+    <p>Você tem certeza que deseja apagar o álbum "{{ album.titulo }}"?</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Sim, Apagar">
+    </form>
+    <p><a href="{% url 'banda' album.banda.id %}"><button>Voltar para a Banda</button></a></p>
+{% endblock %}

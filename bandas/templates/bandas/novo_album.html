@@ -1,0 +1,11 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+    <h3>Novo Álbum para {{ banda.nome }}</h3>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Salvar">
+    </form>
+    <p><a href="{% url 'banda' banda.id %}"><button>Voltar para a Banda</button></a></p>
+{% endblock %}

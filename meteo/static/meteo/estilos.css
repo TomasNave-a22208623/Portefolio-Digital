@@ -1,0 +1,224 @@
+body {
+    font-family: 'Radio Canada Big', sans-serif;
+    background-image: url('/static/meteo/FundoMeteoFin.png');
+    background-size: cover; /* Isso garante que a imagem cobre toda a área, mantendo a proporção */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que a altura mínima seja 100% da altura da visualização */
+    color: #fff;
+}
+
+
+.container {
+    background-color: black;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1.title, h2.subtitle {
+    text-align: center;
+}
+
+h1.title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color:#ECE708;
+}
+
+h2.subtitle {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.endpoint-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #000;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.endpoint-box code {
+    background-color: #f4f4f4;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #ECE708;
+    border: 2px solid #ECE708;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #C0BC1B;
+    border-color: #C0BC1B;
+}
+
+
+.main-title {
+    font-size: 2.8em;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+.weather-container {
+    background-color: black;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 20px;
+}
+
+/* Título da cidade */
+.city-title {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Informações de previsão do tempo */
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ícone de tempo */
+.weather-icon {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Detalhes do tempo */
+.weather-details {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 90%;
+    width: 100%;
+    text-align: left;
+    color: #000;
+}
+
+/* Itens de informação */
+.weather-item {
+    margin: 10px 0;
+}
+
+/* Texto de itens */
+.date, .min-temp, .max-temp, .description {
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-start; /* Alinhará os itens à esquerda */
+    list-style: none;
+    padding: 1em;
+    width: 100%;
+    background-color: transparent; /* Torna a barra transparente */
+    position: fixed; /* Fixa a barra no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Certifica-se que a barra fica no topo de outros elementos */
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li:first-child {
+    margin-left: 20px; /* Adiciona margem à esquerda do primeiro item */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: black; /* Cor verde quando passar o mouse */
+}
+
+
+.nav-button {
+    margin-right: 20px; /* Ajuste a margem direita para espaçar o botão da borda */
+    margin-left: 10px; /* Adicione margem à esquerda para garantir espaçamento também */
+}
+
+
+
+.weather-icon5 {
+    max-width: 100px;
+    height: auto;
+    margin-right: 20px; /* Adiciona margem à direita do ícone */
+}
+
+/* Detalhes do tempo */
+.weather-details5 {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    max-width: calc(100% - 140px); /* Calcula a largura máxima para manter espaço para o ícone */
+    width: 100%;
+    text-align: left;
+    color: #000;
+}
+
+/* Itens de informação */
+.weather-item5 {
+    margin: 10px 0;
+    display: flex; /* Alinha os itens na horizontal */
+    justify-content: space-between; /* Distribui os itens uniformemente na linha */
+    align-items: center; /* Centraliza verticalmente os itens */
+}
+
+.weather-info5 {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o ícone e os detalhes */
+}

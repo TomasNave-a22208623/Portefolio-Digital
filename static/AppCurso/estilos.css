@@ -1,0 +1,576 @@
+
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Radio Canada Big', sans-serif;
+    margin: 0; /* Remove margem padrão */
+    padding: 0; /* Remove padding padrão */
+}
+
+footer p {
+    color: #888;
+    font-size: 12px;
+    text-align: center;
+    margin: 0; /* Remove margem padrão */
+    padding: 10px; /* Adiciona padding para espaçamento interno */
+}
+
+
+
+.header-image {
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    background-image: url('/static/AppCurso/curso cabecalho.png'); /* Caminho para sua imagem de rock */
+    background-size: cover; /* Ajusta a imagem para cobrir o contêiner */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-position: center; /* Centraliza a imagem no elemento */
+    width: 100%; /* Largura total do contêiner */
+    height: 175px; /* Altura fixa para o cabeçalho */
+    margin: 0; /* Remove margem */
+    padding: 0; /* Remove padding */
+}
+
+
+.header-bar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0; /* Remove qualquer margem */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total do elemento */
+    border: 3px solid black
+}
+
+.contentorlogin{
+    padding: 15px;
+}
+
+
+
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+
+
+.button {
+    color: white;
+    background-color: #3D80DB;
+    border: 2px solid #000; /* Borda preta */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 6px 12px; /* Padding menor */
+    text-decoration: none;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+    font-size: 14px; /* Tamanho da fonte ajustado */
+    margin: 5px; /* Margem para espaçamento */
+    width: auto; /* Largura automática */
+    height: auto; /* Altura automática */
+}
+
+.button:hover {
+    color: #2B35B8;
+    border-color: #2B35B8;
+
+}
+
+.edit-button {
+    background-color: #444
+}
+
+.delete-button {
+    background-color: #444
+}
+
+.add--button {
+    background-color: #3D80DB
+}
+
+.home-button {
+    background-color: black; /* Cor de fundo para o botão de voltar ao início */
+}
+
+.back-button {
+    background-color: #444; /* Cor de fundo para o botão de voltar ao início */
+}
+
+
+.button i {
+    margin-right: 5px;
+}
+
+.button.logout {
+
+}
+
+
+.username {
+    margin-right: 10px;
+    color:black;
+}
+
+.username i {
+    margin-right: 5px;
+}
+
+
+
+
+.botaoAno {
+    color: white;
+    background-color: #3D80DB;
+    border: 2px solid #000; /* Borda preta */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 6px 12px; /* Padding menor */
+    text-decoration: none;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+    font-size: 25px; /* Tamanho da fonte ajustado */
+    margin: 5px; /* Margem para espaçamento */
+    width: auto; /* Largura automática */
+    height: auto; /* Altura automática */
+    text-align: center;
+}
+
+.botaoAno:hover {
+    color: #2B35B8;
+    border-color: #2B35B8;
+
+}
+
+.conteinerbotoes{
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+
+
+
+
+.centered {
+    text-align: center; /* Centraliza o texto */
+}
+
+
+.caixaprincipal {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+    background-color:white;
+    border: 1px solid #444;
+    border-radius: 10px;
+    margin-right:120px;
+    margin-left:120px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.conteinerpagina{
+    text-align: center;
+}
+
+
+.contentor-texto{
+    margin-top:40px;
+}
+
+/* texto caixa */
+
+.textoprincipal{
+    margin-top:50px;
+    margin-right:60px;
+    margin-left:60px;
+    margin-bottom:50px;
+}
+
+.titulo-seccao {
+    font-size: 24px;
+    color: #3D80DB;
+    margin-right: 10px; /* Espaço entre o título e o texto */
+    flex-shrink: 0; /* Evita que o título encolha */
+}
+
+.textoApresentacao {
+    font-size: 18px;
+    line-height: 24px; /* Define a altura da linha para alinhar verticalmente com o título */
+    flex-grow: 1; /* Permite que o texto cresça e ocupe o espaço restante */
+}
+
+
+/* titulo */
+
+.conteinerTitulo{
+    margin-bottom:10px;
+    text-align: center;
+}
+
+
+.tituloPagina{
+    text-align: center;
+    color: #3D80DB;
+    font-size: 40px;
+    margin-bottom:0px;
+}
+.subtituloPagina{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    margin-top:1px;
+}
+
+.subtituloPaginaAzul{
+    text-align: center;
+    color: #3D80DB;
+    font-size: 25px;
+}
+
+
+.caixadisciplinas {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    font-size: 16px;
+    margin-top: 20px;
+    color: black;
+    background-color:#3D80DB;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-right: 120px;
+    margin-left: 120px;
+    padding: 20px; /* Ajuste de padding para centralizar melhor o conteúdo */
+    list-style: none; /* Remove os marcadores de lista padrão */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centraliza o texto dentro da caixa */
+}
+
+.textoDisciplinasPrincipal {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%; /* Faz com que o conteúdo ocupe toda a largura da caixa */
+    height: 100%; /* Faz com que o conteúdo ocupe toda a altura da caixa */
+}
+
+.caixadisciplinas a {
+    text-decoration: none;
+    color: black;
+}
+
+.caixadisciplinas a:hover {
+    color: #2B35B8;
+}
+
+.contentordetalhes {
+    display: flex;
+    padding: 5px;
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+}
+
+.detalhe-item {
+    display: flex;
+    flex-direction: row; /* Alinha os itens na horizontal */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%; /* Ajusta a largura para 100% */
+}
+
+
+.textoprincipalDisciplina{
+    margin-top:40px;
+    margin-right:60px;
+    margin-left:60px;
+    margin-bottom:40px;
+}
+
+
+.caixaProjeto {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+    background-color:white;
+    border: 1px solid #444;
+    border-radius: 10px;
+    margin-right:120px;
+    margin-left:120px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* Contêiner do projeto */
+.projeto-conteiner {
+    display: flex; /* Utiliza flexbox para layout */
+    justify-content: space-between; /* Espaça os itens igualmente */
+    align-items: center; /* Alinha verticalmente ao centro */
+    margin-right:60px;
+    margin-left:60px;
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+/* Texto do projeto */
+.projeto-texto {
+    display: flex;
+    flex-direction: column; /* Coloca o título e o link em coluna */
+    max-width: 70%; /* Ajusta a largura máxima para evitar quebra */
+}
+
+/* Link do projeto */
+.projeto-link {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+}
+
+.projeto-link:hover {
+    color: #2B35B8; /* Altera a cor ao passar o mouse */
+}
+
+/* Imagem do projeto */
+.projeto-image {
+    width: 200px; /* Define a largura fixa da imagem */
+    height: 120px; /* Define a altura fixa da imagem */
+    object-fit: cover; /* Garante que a imagem se ajuste dentro das dimensões sem distorção */
+    border-radius: 8px; /* Cantos arredondados */
+    border: 1px solid #151515; /* Borda fina e cor */
+    margin-left: 20px; /* Margem para espaçamento à esquerda da imagem */
+}
+
+.projetos-image {
+    width: 200px; /* Define a largura fixa da imagem */
+    height: 120px; /* Define a altura fixa da imagem */
+    object-fit: cover; /* Garante que a imagem se ajuste dentro das dimensões sem distorção */
+    border-radius: 8px; /* Cantos arredondados */
+    border: 2px solid black; /* Borda fina e cor */
+    margin-left: 20px; /* Margem para espaçamento à esquerda da imagem */
+}
+
+.buttonLinks {
+    color: white;
+    background-color: #3D80DB;
+    border: 2px solid #000; /* Borda preta */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 8px 12px; /* Padding menor */
+    text-decoration: none;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+    font-size: 30px; /* Tamanho da fonte ajustado */
+    margin: 5px; /* Margem para espaçamento */
+    width: 200px; /* Largura automática */
+    height: 200px; /* Altura automática */
+    text-align: center;
+}
+
+.buttonLinks:hover {
+    color: #2B35B8;
+    border-color: #2B35B8;
+
+}
+
+.projeto-imageprojeto {
+    width: 400px; /* Define a largura fixa da imagem */
+    height: 240px; /* Define a altura fixa da imagem */
+    object-fit: cover; /* Garante que a imagem se ajuste dentro das dimensões sem distorção */
+    border-radius: 8px; /* Cantos arredondados */
+    border: 1px solid #151515; /* Borda fina e cor */
+    margin-left: 20px; /* Margem para espaçamento à esquerda da imagem */
+    align-items: center;
+    margin-bottom:30px;
+}
+
+.imagemProjeto-conteiner {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 30px; /* Mantém o espaçamento inferior */
+}
+
+.contentorEdicao{
+
+}
+
+.contentorEdicao .button {
+    margin: 0 5px; /* Adiciona margem horizontal entre os botões */
+}
+
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Ajusta o tamanho da fonte base */
+    }
+
+    .header-image {
+        height: 120px; /* Reduz a altura do cabeçalho */
+    }
+
+    .header-bar {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        padding: 5px; /* Reduz o padding */
+    }
+
+    .contentorlogin {
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .button {
+        font-size: 12px; /* Reduz o tamanho da fonte dos botões */
+        padding: 4px 8px; /* Reduz o padding dos botões */
+        margin: 3px; /* Reduz a margem dos botões */
+    }
+
+    .caixaProjeto {
+        margin: 10px;
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: flex; /* Exibe conteúdo em linha */
+        flex-direction: row; /* Alinha itens em linha */
+        align-items: center; /* Centraliza itens verticalmente */
+        justify-content: space-between; /* Distribui os itens horizontalmente */
+    }
+
+    .projeto-texto {
+        margin-right: 20px; /* Espaçamento à direita do texto */
+    }
+
+    .projeto-link {
+        font-size: 14px;
+    }
+
+    .projeto-image {
+        max-width: 50%; /* Reduz a largura máxima da imagem */
+        height: auto;
+    }
+
+
+    .botaoAno {
+        font-size: 14px; /* Reduz o tamanho da fonte dos botões de ano */
+        padding: 4px 8px; /* Reduz o padding dos botões de ano */
+        margin: 5px; /* Reduz a margem dos botões de ano */
+    }
+
+    .conteinerTitulo {
+        margin: 10px; /* Reduz a margem das caixas do título */
+    }
+
+    .tituloPagina h1 {
+        font-size: 24px; /* Reduz o tamanho da fonte do título principal */
+    }
+
+    .subtituloPagina {
+        font-size: 16px; /* Reduz o tamanho da fonte do subtítulo */
+    }
+
+    .subtituloPaginaAzul {
+        font-size: 16px; /* Reduz o tamanho da fonte do subtítulo azul */
+    }
+
+    .conteinerbotoes {
+        margin-top: 10px; /* Reduz a margem superior dos contêineres de botões */
+        margin-bottom: 10px; /* Reduz a margem inferior dos contêineres de botões */
+    }
+
+    .caixaprincipal {
+        margin: 10px; /* Reduz a margem externa */
+        padding: 15px; /* Adiciona padding interno */
+        font-size: 14px; /* Reduz o tamanho da fonte dentro da caixa principal */
+    }
+
+    .textoprincipal {
+        margin: 10px; /* Reduz as margens internas do texto principal */
+    }
+
+    .contentor-texto {
+        margin-top: 20px; /* Ajusta a margem superior */
+        margin-bottom: 20px; /* Ajusta a margem inferior */
+        margin: 5px 0;
+    }
+
+
+    .titulo-seccao {
+        font-size: 16px; /* Reduz o tamanho da fonte do título das seções */
+    }
+
+    .textoApresentacao {
+        font-size: 14px; /* Reduz o tamanho da fonte do texto de apresentação */
+        margin-left: 10px; /* Aumenta a margem à esquerda */
+        margin-right: 10px; /* Aumenta a margem à direita */
+    }
+
+    .header-image {
+        height: 100px; /* Ajuste a altura conforme necessário */
+        background-size: cover; /* Ajusta a imagem para cobrir todo o contêiner */
+        background-position: center; /* Centraliza a imagem */
+        margin: 0; /* Remove margens */
+        padding: 0; /* Remove padding */
+    }
+
+
+    .caixadisciplinas {
+        display: block; /* Garante que as caixas fiquem em bloco */
+        width: 100%; /* Faz com que as caixas ocupem toda a largura disponível */
+        box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+        margin: 10px 0; /* Margem inferior e superior para espaçamento entre caixas */
+        padding: 10px; /* Adiciona padding interno */
+    }
+
+    .caixadisciplinas a {
+        font-size: 14px; /* Ajusta o tamanho da fonte dos links */
+        white-space: normal; /* Permite que o texto quebre em várias linhas */
+        word-wrap: break-word; /* Permite quebra de palavras longas */
+    }
+
+
+    .contentordetalhes {
+        display: flex; /* Ajusta o layout dos detalhes para flexível */
+        flex-direction: column; /* Alinha itens em coluna */
+        margin: 5px 0; /* Ajusta as margens dos contêineres de detalhes */
+    }
+
+    .detalhe-item {
+        margin: 5px 0; /* Ajusta a margem entre os itens de detalhes */
+    }
+
+    .textoprincipalDisciplina {
+        margin: 10px; /* Reduz as margens internas do texto principal */
+    }
+
+    .projeto-imageprojeto {
+        max-width: 100%; /* Define a largura máxima da imagem como 100% da largura da caixa */
+        height: auto; /* Permite que a altura seja ajustada automaticamente para manter a proporção */
+        display: block; /* Garante que a imagem não gere espaços extras */
+        margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    }
+
+    contentorEdicao a.button {
+        display: block;
+        margin-bottom: 10px; /* Adicione um espaçamento vertical entre os botões */
+    }
+
+    .contentorEdicao {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contentorEdicao a.button {
+        margin-bottom: 10px; /* Adicione margem inferior para espaçamento entre os botões */
+    }
+
+
+    .projetos-image {
+        width: auto; /* Ajustar a largura automaticamente */
+        height: 75px; /* Ajustar a altura automaticamente */
+        max-width: 110px; /* Definir a largura máxima como 100% */
+        max-height: 75px; /* Definir a altura máxima */
+    }
+
+    .projeto-conteiner {
+        margin: 5px; /* Reduzir a margem entre o conteúdo do projeto e a caixa do projeto */
+    }
+}

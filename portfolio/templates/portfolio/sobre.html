@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/estilos.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/5d1319edfb.js" crossorigin="anonymous"></script>
+</head>
+<body class="pagina-sobre">
+    <div class="pagina-conteudo">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'landing_page' %}">Home</a></li>
+                <li><a href="{% url 'sobremim' %}">Sobre Mim</a></li>
+                <li><a href="{% url 'curso:pagina_listaProjetos' %}">Projetos</a></li>
+                <li><a href="{% url 'programacaoWeb' %}">Programação Web</a></li>
+                <li><a href="{% url 'contactos' %}">Contactos</a></li>
+                {% if request.user.is_authenticated %}
+                  <li><a href="{% url 'logout' %}?next={{ request.path }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                {% else %}
+                  <li><a href="{% url 'login' %}?next={{ request.path }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                <li><a><span class="username"><i class="fas fa-user"></i>{{ request.user.username }}</span></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="containerSobre">
+        <div class="caixaSobre">
+            <!-- Caixa da Foto -->
+            <div class="caixa-foto">
+                <div class="contentor">
+                    <img src="/static/portfolio/fotoPerfil.jpeg" alt="Sua Foto" class="fotoSobre">
+                    <h1>Tomás Nave</h1>
+                    <h2>Aluno da Universidade Lusófona de Humanidades e Tecnologia</h2>
+                    <h2>Engenharia Informática</h2>
+                </div>
+            </div>
+
+            <!-- Caixa Sobre Mim -->
+            <div class="caixa-sobre">
+                <h1>Sobre Mim</h1>
+                <p>O meu nome é Tomás Nave, tenho 20 anos e sou de Queluz. Com mais de uma década de escutismo adquiri capacidades como o trabalho em equipa, o compromisso, uma capacidade de adaptação às mais diversas situações e várias capacidades organizacionais. Estou a acabar o primeiro ano de faculdade na Licenciatura de Engenharia Informática, na Universidade Lusófona, onde ganhei alguns conhecimentos básicos em linguagens de programação como: Java, Kotlin e C. Tenho como objetivo construir um carreira profissional na área de programação.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Experiência Profissional -->
+    <section class="containerExperiencia">
+        <h1>Experiência Profissional</h1>
+        <div class="caixaExperiencia">
+            <div class="item-experiencia">
+                <h2>Operador de loja </h2>
+                <p>Período: jan. de 2022 - mar. de 2022</p>
+                <p>Telepizza Portugal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Formação Acadêmica -->
+    <section class="containerFormacao">
+        <h1>Formação Acadêmica</h1>
+        <div class="caixaFormacao">
+            <div class="item-formacao">
+                <h2>Ensino Secundário</h2>
+                <p>Escola Secundária Miguel Torga</p>
+                <p>Período: 2019 - 2021</p>
+                <p>Curso de Ciências e Tecnologia</p>
+            </div>
+            <div class="item-formacao">
+                <h2>Licenciatura em Engenharia Informática</h2>
+                <p>Universidade Lusófona</p>
+                <p>Período: 2022 - 2025</p>
+                <p>Descrição: Atualmente, estou a terminar o meu segundo ano Licenciatura em Engenharia Informática na Universidade Lusófona, onde estou adquirindo conhecimentos em diversas linguagens de programação e desenvolvimento de sistemas.</p>
+            </div>
+        </div>
+    </section>
+    <section class="containerAtividades">
+        <h1>Atividades Extracurriculares</h1>
+        <div class="caixaAtividades">
+            <div class="item-atividade">
+                <h2>Escuteiros</h2>
+                <p>Período: set. de 2010 - abr. de 2021</p>
+                <p>Descrição: Tive o prazer de pertencer ao Corpo Nacional de Escutas tendo sido efetivo no Agrupamento 60 de Queluz por mais de uma década , onde desempenhei os mais diversos cargos tendo sido guia de equipa por mais de quatro anos. Pertencendo a este agrupamento desenvolvi muitas capacidades sociais e organizacionais. Durante o meu percurso em 2020 recebi a distinção de Louvor de Agrupamento</p>
+            </div>
+            <div class="item-atividade">
+                <h2>Trabalho Voluntário no Banco Alimentar</h2>
+                <p>Período: set. de 2010 - abr. de 2021</p>
+                <p>Descrição: Enquanto escuteiro, participei em varias ações de voluntariado em parceria com o Banco Alimentar Contra a Fome.</p>
+            </div>
+        </div>
+    </section>
+    <section class="containerSkills">
+    <h1>Skills</h1>
+    <div class="caixaSkills">
+        <div class="skill-lista">
+            <div class="skill-item">
+                <div class="skill-box">
+                    <h2>Linguagens de Programação</h2>
+                    <p>Java, Kotlin, C#, SQL, Python , C , C++</p>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-box">
+                    <h2>Ferramentas de Desenvolvimento Web</h2>
+                    <p> HTML, CSS, JavaScript , Django</p>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-box">
+                    <h2>Ferramentas de Desenvolvimento</h2>
+                    <p>Git, GitHub, IntelliJ IDEA, Visual Studio Code</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="containerSkills">
+    <h1>Aptidões Linguísticas</h1>
+    <div class="caixaSkills">
+        <div class="skill-lista">
+            <div class="lingua-item">
+                <div class="lingua-box">
+                    <h2>Português</h2>
+                    <p>Nível nativo</p>
+                </div>
+            </div>
+            <div class="lingua-item">
+                <div class="lingua-box">
+                    <h2>Inglês</h2>
+                    <p>Nível intermediário</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+</body>
+</html>

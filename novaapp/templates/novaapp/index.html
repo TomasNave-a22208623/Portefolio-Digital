@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo DC</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Universo DC</h1>
+    </header>
+
+    
+    
+    <h1>Bem-vindo ao Universo da DC!</h1>
+    <h1><img src="{{ MEDIA_URL }}fotos_dc/dc.jpg" alt="dc"> DC</h1>
+    <p>Navegue pelo nosso site para descobrir informações sobre os super-heróis e vilões da DC Comics.</p>
+    <h2>Sobre a DC Comics</h2>
+    <p>A DC Comics é uma das maiores editoras de histórias em quadrinhos do mundo, conhecida por criar alguns dos mais icônicos super-heróis e vilões da cultura pop. Desde a sua fundação em 1934, a DC tem cativado fãs de todas as idades com suas incríveis histórias, que exploram temas de heroísmo, aventura e justiça.</p>
+    <p>Explore o vasto universo da DC Comics através das seguintes seções:</p>
+    
+    <nav>
+        <a href="{% url 'DCapp:herois' %}">Heróis da DC</a>
+        <a href="{% url 'DCapp:viloes' %}">Vilões da DC</a>
+    </nav>
+    
+    <footer>
+        <p>&copy; 2024 Universo DC - Todos os direitos reservados.</p>
+    </footer>
+    
+</body>
+</html>
